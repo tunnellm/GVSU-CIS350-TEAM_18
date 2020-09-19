@@ -1,6 +1,6 @@
-Team name:
+Team name: Team_18
 
-Team members:
+Team members: Marc Tunnell, David Rose, Jack G., Tom L
 
 # Introduction
 
@@ -8,7 +8,7 @@ Team members:
 
 # Anticipated Technologies
 
-(What technologies are needed to build this project)
+Java, Google Calendar API
 
 # Method/Approach
 
@@ -19,5 +19,7 @@ Team members:
 (Figure out what your major milestones for this project will be, including how long you anticipate it *may* take to reach that point)
 
 # Anticipated Problems
+
+Programming an appropraite algorithm to determine the correct order to complete assignments.
 
 (Describe any problems you foresee that you will need to overcome)
