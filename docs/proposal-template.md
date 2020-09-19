@@ -8,7 +8,7 @@ Team members: Marc Tunnell, David Rose, Jack G., Tom L
 
 # Anticipated Technologies
 
-Java, Google Calendar API
+Java, Android Studio, Google Calendar API
 
 # Method/Approach
 
