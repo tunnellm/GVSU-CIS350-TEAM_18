@@ -6,7 +6,8 @@ Project description (~1 paragraph)
 
 * [Marc Tunnell](https://github.com/tunnellm/CIS350-HW2-TUNNELL)
 * [Thomas Lobbestael](https://github.com/lobb00/CIS350-HW2-Lobbestael)
-* Member 3 (Role 5, Role 6)
+* [Jack Groothuis](https://github.com/TheIinTeam/CIS350-HW2-Groothuis)
+* Member 4 (Role 7, Role 8)
 
 ## Prerequisites
 
