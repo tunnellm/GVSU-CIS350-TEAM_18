@@ -27,7 +27,7 @@ Our team has collectively decided to use the agile approach to software developm
 
 # Anticipated Problems
 
-Programming an appropraite algorithm to determine the correct order to complete assignments.
+Programming an appropriate algorithm to determine the correct order to complete assignments.
 
 # Functional Requirements
 
@@ -35,7 +35,7 @@ Programming an appropraite algorithm to determine the correct order to complete 
 * The application shall, using a grade-weight system, determine the optimal order of completion for the aforementioned assignments.
 * The application shall allow the user to mark the aforementioned assignments as complete.
 * The application shall allow the user to input weighting categories for each class.
-* The application shall allow the user to drag inputted assignments into teh aforementioned weighting categories.
+* The application shall allow the user to drag inputted assignments into the aforementioned weighting categories.
 * The application shall allow the user to input estimated time of completion for the inputted assignments.
 
 # Non-Functional Requirements
