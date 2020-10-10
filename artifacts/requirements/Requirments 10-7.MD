@@ -10,6 +10,9 @@ Functional Requirements
 4. The application shall allow for the user to input, edit, and delete major institutional events such as breaks, career fairs, etc.
 5. The application shall allow for the event of leap year and day within the calendar.
 6. The application shall use user inputted color coding on the calendar GUI to show what class an assignment is part of.
+7. The application shall allow for the user to input an estimated number of hours the assignement will take.
+8. The application shall allow for the user to seemlessly edit existing assignements in the case a date is changed.
+9. The appllication should allow the user to set push notifications for assignments coming up
 
 Non-Functional Requirements
 1. The application shall show the importance of each assignment through a system of darker shading and coloring on an assignment basis.
@@ -18,3 +21,6 @@ Non-Functional Requirements
 4. The application shall be reliable and without data loss or major crash causing errors.
 5. The application shall be lightweight with minimal usage of device computing resources.
 6. The application shall include major  US holidays on the calendar GUI.
+7. The application should have a save state so that if the app does crash the user does not lose data
+8. The application should be easy to navigate for a simple user expirence.
+9. The application should be able to run alongside other applications without causing any interruption in performance.
