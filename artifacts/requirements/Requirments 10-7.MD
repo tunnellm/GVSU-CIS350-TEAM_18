@@ -13,6 +13,9 @@ Functional Requirements
 7. The application shall allow for the user to input an estimated number of hours the assignement will take.
 8. The application shall allow for the user to seemlessly edit existing assignements in the case a date is changed.
 9. The application shall allow the user to set push notifications for assignments coming up.
+10. The application shall create assignments that can be modified or deleted
+11. The application's assignments shall have descriptions and priorities
+12. The application's assignment grades shall be calculated from completed assignments over time
 
 Non-Functional Requirements
 1. The application shall show the importance of each assignment through a system of darker shading and coloring on an assignment basis.
@@ -24,3 +27,6 @@ Non-Functional Requirements
 7. The application shall have a save state so that if the app does crash the user does not lose data.
 8. The application shall be easy to navigate for a simple user expirence.
 9. The application shall be able to run alongside other applications without causing any interruption in performance.
+10. The application shall be able to run on Android development software
+11. The application's source code shall be protected from user interference
+12. The application's bugs shall be kept to a minimum and always reported
