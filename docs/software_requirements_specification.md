@@ -33,7 +33,6 @@
 1. Generate To-DO List
 	1. The application shall show the importance of each assignment through a system of darker shading and coloring on an assignment basis.
 	1. The application shall display the assignments on the calendar in a concise and easy-to-read manner.
-	1. 
 1. Graphical User Interface
 	1. The application shall have a modern user-interface design that is scalable for a large range of device sizes.
 	1. The application shall be easy to navigate for a simple user experience.
