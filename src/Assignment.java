@@ -3,7 +3,7 @@
  * This class contains the properties of an assignment later used in
  * the Calendar class
  *********************************************************************/
-public class Assignment() {
+public class Assignment {
 
     private double grade;
     private String priority;
@@ -54,7 +54,7 @@ public class Assignment() {
     }
 
     public static void main(String[] args){
-        Assignment a = new Assignment(100.00,"Low",true);
+        Assignment a = new Assignment(100.00,"low",true);
         System.out.println(a.getInfo());
     }
 }
