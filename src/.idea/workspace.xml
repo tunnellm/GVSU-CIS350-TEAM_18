@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bf4b9bac-2e34-4cec-90d4-cedd99f2ae91" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1j4C7O9ZBYCSWayYAP09fCTYvWP" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../app" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bf4b9bac-2e34-4cec-90d4-cedd99f2ae91" name="Default Changelist" comment="" />
+      <created>1603053809108</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603053809108</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="699" y="603" key="FileChooserDialogImpl" timestamp="1603053829069">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="699" y="603" key="FileChooserDialogImpl/0.0.2560.1400/-2160.-465.1080.1880/-1080.-454.1080.1880@0.0.2560.1400" timestamp="1603053829069" />
+    <state x="854" y="567" key="com.intellij.ide.util.TipDialog" timestamp="1603053813137">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="854" y="567" key="com.intellij.ide.util.TipDialog/0.0.2560.1400/-2160.-465.1080.1880/-1080.-454.1080.1880@0.0.2560.1400" timestamp="1603053813137" />
+  </component>
+</project>
