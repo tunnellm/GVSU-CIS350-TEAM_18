@@ -7,13 +7,12 @@ import java.util.*;
 *
 * */
 
-public class Course<GradeScale, Assignment> {
+public class Course<Assignment> {
 
 
     String courseName;
     int creditHours;
     ArrayList<Assignment> assignments = new ArrayList();
-    ArrayList<GradeScale> gradeScale = new ArrayList();
 
     public Course(String courseName, int creditHours) {
         this.courseName = courseName;
@@ -24,9 +23,8 @@ public class Course<GradeScale, Assignment> {
         return this.creditHours;
     }
 
-    public void addAssignment(Assignment assignment, GradeScale gradeScale) {
+    public void addAssignment(Assignment assignment) {
         this.assignments.add(assignment);
-        this.gradeScale.add(gradeScale);
     }
 
     public void setCreditHours(int hours) {
