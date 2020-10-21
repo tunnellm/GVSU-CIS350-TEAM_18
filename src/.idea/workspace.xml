@@ -5,6 +5,9 @@
       <config />
     </shared>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="bf4b9bac-2e34-4cec-90d4-cedd99f2ae91" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,11 +46,15 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Users\tunne\OneDrive\Documents\GitHub\GVSU-CIS350-TEAM_18\src\marc-test" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\tunne\OneDrive\Documents\GitHub\GVSU-CIS350-TEAM_18\src\app\src\main\java\com\example\colcalendar18" />
       <recent name="D:\Users\tunne\OneDrive\Documents\GitHub\GVSU-CIS350-TEAM_18\src" />
     </key>
   </component>
