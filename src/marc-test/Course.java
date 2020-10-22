@@ -7,7 +7,7 @@ import java.util.*;
 *
 * */
 
-public class Course<Assignment> {
+public class Course extends Assignment {
 
 
     String courseName;
