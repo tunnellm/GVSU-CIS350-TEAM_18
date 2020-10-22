@@ -1,7 +1,5 @@
-//Gunnna be honest cant remember how to package classes together
-
+package Tomtest;
 // import gradeScale
-//import assignment;
 import java.util.*;
 
 /*
@@ -10,37 +8,36 @@ import java.util.*;
 
 public class Course<GradeScale, Assignment> {
 
-
     String courseName;
     int creditHours;
-    ArrayList<Assignment> assignments = new ArrayList();
+    double classTotal;
+    ArrayList<Tomtest.Assignment> assignments = new ArrayList();
     ArrayList<GradeScale> gradeScale = new ArrayList();
 // Array list of weights here just not sure how to make them corresponds to assignment types yet
 
-    //Obviously super basic and in need of tweeking but general idea rn.
-    public void calcPriority(Assignment temp, double weight){
-        double result =  temp.getTotalPoints * weight * creditHours;
-        temp.priority = result;
+    //Obviously super basic and in need of tweeking but general idea rn. Weight is weight of assignment based on type (ie 15% for labs or something)
+    public void calcPriority(Tomtest.Assignment temp, double weight){
+        double result =  (temp.getTotalPoints() * weight * creditHours) / classTotal;
+        temp.setPriority(result);
     }
 
-    public Assignment createAssignment(double priority, boolean complete, String desc, double earnedPoints, double totalPoints, String type) {
-        Assignment temp = new Assignment(type);
-        calcPriority(temp);
+    public void createAssignment(double priority, boolean complete, String desc, double earnedPoints, double totalPoints, String type) {
+        Tomtest.Assignment temp = new Tomtest.Assignment(type);
+        calcPriority(temp, 0);
         temp.setTotalPoints(totalPoints);
         temp.setEarnedPoints(earnedPoints);
         temp.setDesc(desc);
         temp.setComplete(complete);
         assignments.add(temp);
-
     }
 
     public void editAssignment(int index,boolean complete, String desc, double earnedPoints, double totalPoints, String type ){
-        Assignment edit = assignments.get(index)
-        edit.complete = complete;
-        edit.totalPoints = totalPoints;
-        edit.desc = desc;
-        edit.earnedPoints = earnedPoints;
-        edit.type = type;
+        Tomtest.Assignment edit = assignments.get(index);
+        edit.setComplete(complete);
+        edit.setTotalPoints(totalPoints);
+        edit.setDesc(desc);
+        edit.setEarnedPoints(earnedPoints);
+        edit.setType(type);
         assignments.add(index,edit);
     }
 
@@ -53,10 +50,13 @@ public class Course<GradeScale, Assignment> {
         return this.creditHours;
     }
 
-    public void addAssignment(Assignment assignment, GradeScale gradeScale) {
+    public void addAssignment(Tomtest.Assignment assignment, GradeScale gradeScale) {
         this.assignments.add(assignment);
         this.gradeScale.add(gradeScale);
     }
+    public double getClassTotal() { return classTotal; }
+
+    public void setClassTotal(double classTotal) { this.classTotal = classTotal; }
 
     public void setCreditHours(int hours) {
         this.creditHours = hours;

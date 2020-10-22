@@ -1,4 +1,4 @@
-//Gunnna be honest cant remeber how to package classes together
+package Tomtest;
 public class Assignment {
 
     private double totalPoints;
@@ -9,7 +9,7 @@ public class Assignment {
     //Priority = num between 1-100 from some calc in class based on type, points avaliable, and class credits.
     private double priority;
 
-    public Assignment ( String type){
+    public Assignment(String type){
         this.type = type;
     }
 
