@@ -132,8 +132,8 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ColCalendar18.app" type="AndroidRunConfigurationType" factoryName="Android App">
-      <module name="ColCalendar18.app" />
+    <configuration name="ColCalendar18.app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="src.ColCalendar18.app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
@@ -277,18 +277,27 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2397" y="211" key="#PSD" timestamp="1603317963084">
-      <screen x="1920" y="-55" width="1920" height="1040" />
+    <state x="970" y="404" key="#ColCalendar18.app" timestamp="1603405280756">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="970" y="404" key="#ColCalendar18.app/0.0.2560.1400/-2160.-465.1080.1880/-1080.-454.1080.1880@0.0.2560.1400" timestamp="1603405280756" />
+    <state x="636" y="358" key="#PSD" timestamp="1603405669394">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="2397" y="211" key="#PSD/0.0.1536.824/1920.-55.1920.1040@1920.-55.1920.1040" timestamp="1603317963084" />
+    <state x="636" y="358" key="#PSD/0.0.2560.1400/-2160.-465.1080.1880/-1080.-454.1080.1880@0.0.2560.1400" timestamp="1603405669394" />
     <state x="999" y="345" key="#app" timestamp="1603211265644">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="999" y="345" key="#app/0.0.2560.1400/-2160.-465.1080.1880/-1080.-454.1080.1880@0.0.2560.1400" timestamp="1603211265644" />
-    <state x="597" y="440" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603211321591">
+    <state x="597" y="440" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603494223414">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="597" y="440" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-2160.-465.1080.1880/-1080.-454.1080.1880@0.0.2560.1400" timestamp="1603211321591" />
+    <state x="597" y="440" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-2160.-465.1080.1880/-1080.-454.1080.1880@0.0.2560.1400" timestamp="1603494223414" />
+    <state x="988" y="556" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1603493762838">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="988" y="556" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.2560.1400/-2160.-465.1080.1880/-1080.-454.1080.1880@0.0.2560.1400" timestamp="1603493762838" />
     <state x="2444" y="393" key="FileChooserDialogImpl" timestamp="1603317891051">
       <screen x="1920" y="-55" width="1920" height="1040" />
     </state>
@@ -310,9 +319,9 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="885" height="223" key="GridCell.Tab.0.right/0.0.2560.1400/-2160.-465.1080.1880/-1080.-454.1080.1880@0.0.2560.1400" timestamp="1603194444509" />
-    <state x="854" y="567" key="com.intellij.ide.util.TipDialog" timestamp="1603194486973">
+    <state x="854" y="567" key="com.intellij.ide.util.TipDialog" timestamp="1603405247646">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="854" y="567" key="com.intellij.ide.util.TipDialog/0.0.2560.1400/-2160.-465.1080.1880/-1080.-454.1080.1880@0.0.2560.1400" timestamp="1603194486973" />
+    <state x="854" y="567" key="com.intellij.ide.util.TipDialog/0.0.2560.1400/-2160.-465.1080.1880/-1080.-454.1080.1880@0.0.2560.1400" timestamp="1603405247646" />
   </component>
 </project>
