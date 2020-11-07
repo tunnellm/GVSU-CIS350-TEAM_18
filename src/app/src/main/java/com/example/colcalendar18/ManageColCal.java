@@ -34,23 +34,27 @@ public class ManageColCal extends AppCompatActivity {
         FloatingActionButton fab = findViewById(R.id.fab);
         Intent intent = getIntent();
 
+
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String tabName = Objects.requireNonNull(tabs.getTabAt(tabs.getSelectedTabPosition())).getText().toString().toLowerCase();
-                String b = "";
-                if (tabName.startsWith("a") || tabName.startsWith("e")) {
-                    b = "n ";
-                } else {
-                    b = " ";
+                if (view.getId() == R.id.fab) {
+                    String tabName = Objects.requireNonNull(tabs.getTabAt(tabs.getSelectedTabPosition())).getText().toString().toLowerCase();
+                    String b = "";
+                    if (tabName.startsWith("a") || tabName.startsWith("e")) {
+                        b = "n ";
+                    } else {
+                        b = " ";
+                    }
+                    // Change listener to instantiate class assignment, course, event based on tab selected
+                    // Needs to show classes in here
+                    Snackbar.make(view, "Add a" + b + tabName.substring(0, tabName.length() - 1), Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
                 }
-                // Change listener to instantiate class assignment, course, event based on tab selected
-                // Needs to show classes in here
-                Snackbar.make(view, "Add a" + b + tabName.substring(0, tabName.length() - 1), Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-
             }
         });
 
     }
+
 }
