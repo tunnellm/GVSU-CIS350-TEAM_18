@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+        <!--Put form controls here-->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_marginTop="0dp"
+        android:layout_height="230dp"
+        android:id="@+id/scrollView6"
+        android:fillViewport="true">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/courseList"
+            android:layout_gravity="top"
+            android:layout_marginTop="5dp"/>
+    </LinearLayout>
+        </ScrollView>
+
+    <TextView
+        android:id="@+id/TextViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Enter Course Details"
+        android:textSize="10pt"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="400dp"
+        />
+
+    <EditText
+        android:id="@+id/EditCourseName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="208dp"
+        android:hint="Credit Name"
+        android:inputType="textCapWords" />
+
+    <EditText
+        android:id="@+id/EditCourseHours"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="106dp"
+        android:hint="Course Hours"
+        android:inputType="textNoSuggestions" />
+
+
+
+</RelativeLayout>

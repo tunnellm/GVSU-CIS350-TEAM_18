@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.managecourse) {
+            Course oneTest = new Course("Diversity", 3);
+            Course twoTest = new Course("Linear Algebra", 4);
             Intent intent = new Intent(this, ManageColCal.class);
             startActivity(intent);
 

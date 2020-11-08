@@ -1,6 +1,7 @@
 package com.example.colcalendar18;
-import com.example.colcalendar18.Assignment;
 // import gradeScale
+import com.example.colcalendar18.ui.main.CourseFragment;
+
 import java.util.*;
 
 /*
@@ -12,7 +13,9 @@ public class Course {
     String courseName;
     int creditHours;
     double classTotal;
-    ArrayList<Assignment> assignments = new ArrayList();
+    ArrayList<Assignment> assignments = new ArrayList<>();
+    public static ArrayList<Course> courseArrayList = new ArrayList<>();
+
 // Array list of weights here just not sure how to make them corresponds to assignment types yet
 
 //    Obviously super basic and in need of tweeking but general idea rn. Weight is weight of assignment based on type (ie 15% for labs or something)
@@ -20,6 +23,7 @@ public class Course {
         double result =  (temp.getTotalPoints() * weight * creditHours) / classTotal;
         temp.setPriority(result);
     }
+
 
     public void createAssignment(double priority, boolean complete, String desc, double earnedPoints, double totalPoints, String type) {
         Assignment temp = new Assignment(type);
@@ -44,6 +48,7 @@ public class Course {
     public Course(String courseName, int creditHours) {
         this.courseName = courseName;
         this.creditHours = creditHours;
+        courseArrayList.add(this);
     }
 
     public int getCreditHours() {

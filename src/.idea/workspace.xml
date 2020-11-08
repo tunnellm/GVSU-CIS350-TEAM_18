@@ -5,6 +5,9 @@
       <config />
     </shared>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
@@ -40,6 +43,13 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="layoutResourceFile" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -63,6 +73,9 @@
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.colcalendar18.ui.main" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Users\tunne\OneDrive\Documents\GitHub\GVSU-CIS350-TEAM_18\src\app\src\main\java\com\example\colcalendar18" />
       <recent name="D:\Users\tunne\OneDrive\Documents\GitHub\GVSU-CIS350-TEAM_18\src" />
@@ -295,34 +308,54 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="597" y="440" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-2160.-465.1080.1880/-1080.-454.1080.1880@0.0.2560.1400" timestamp="1603494223414" />
+    <state x="1085" y="406" key="#com.intellij.ide.util.MemberChooser" timestamp="1604872401499">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1085" y="406" key="#com.intellij.ide.util.MemberChooser/-2160.-474.1080.1880/-1080.-463.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1604872401499" />
     <state x="988" y="556" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1603493762838">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="988" y="556" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.2560.1400/-2160.-465.1080.1880/-1080.-454.1080.1880@0.0.2560.1400" timestamp="1603493762838" />
+    <state x="-2111" y="-436" width="1002" height="1216" key="AVDManager" timestamp="1604867922965">
+      <screen x="-2160" y="-474" width="1080" height="1880" />
+    </state>
+    <state x="-2111" y="-436" width="1002" height="1216" key="AVDManager/-2160.-474.1080.1880/-1080.-463.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1604867922965" />
     <state x="2444" y="393" key="FileChooserDialogImpl" timestamp="1603317891051">
       <screen x="1920" y="-55" width="1920" height="1040" />
     </state>
     <state x="2444" y="393" key="FileChooserDialogImpl/0.0.1536.824/1920.-55.1920.1040@1920.-55.1920.1040" timestamp="1603317891051" />
     <state x="699" y="603" key="FileChooserDialogImpl/0.0.2560.1400/-2160.-465.1080.1880/-1080.-454.1080.1880@0.0.2560.1400" timestamp="1603053829069" />
-    <state width="885" height="223" key="GridCell.Tab.0.bottom" timestamp="1603194444509">
+    <state width="2516" height="304" key="GridCell.Tab.0.bottom" timestamp="1604875401084">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state width="2516" height="304" key="GridCell.Tab.0.bottom/-2160.-474.1080.1880/-1080.-463.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1604875401084" />
     <state width="885" height="223" key="GridCell.Tab.0.bottom/0.0.2560.1400/-2160.-465.1080.1880/-1080.-454.1080.1880@0.0.2560.1400" timestamp="1603194444509" />
-    <state width="885" height="223" key="GridCell.Tab.0.center" timestamp="1603194444509">
+    <state width="2516" height="304" key="GridCell.Tab.0.center" timestamp="1604875401084">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state width="2516" height="304" key="GridCell.Tab.0.center/-2160.-474.1080.1880/-1080.-463.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1604875401084" />
     <state width="885" height="223" key="GridCell.Tab.0.center/0.0.2560.1400/-2160.-465.1080.1880/-1080.-454.1080.1880@0.0.2560.1400" timestamp="1603194444509" />
-    <state width="885" height="223" key="GridCell.Tab.0.left" timestamp="1603194444509">
+    <state width="2516" height="304" key="GridCell.Tab.0.left" timestamp="1604875401084">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state width="2516" height="304" key="GridCell.Tab.0.left/-2160.-474.1080.1880/-1080.-463.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1604875401084" />
     <state width="885" height="223" key="GridCell.Tab.0.left/0.0.2560.1400/-2160.-465.1080.1880/-1080.-454.1080.1880@0.0.2560.1400" timestamp="1603194444509" />
-    <state width="885" height="223" key="GridCell.Tab.0.right" timestamp="1603194444509">
+    <state width="2516" height="304" key="GridCell.Tab.0.right" timestamp="1604875401084">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state width="2516" height="304" key="GridCell.Tab.0.right/-2160.-474.1080.1880/-1080.-463.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1604875401084" />
     <state width="885" height="223" key="GridCell.Tab.0.right/0.0.2560.1400/-2160.-465.1080.1880/-1080.-454.1080.1880@0.0.2560.1400" timestamp="1603194444509" />
     <state x="854" y="567" key="com.intellij.ide.util.TipDialog" timestamp="1603405247646">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="854" y="567" key="com.intellij.ide.util.TipDialog/0.0.2560.1400/-2160.-465.1080.1880/-1080.-454.1080.1880@0.0.2560.1400" timestamp="1603405247646" />
+    <state x="1089" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604874156826">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1089" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-2160.-474.1080.1880/-1080.-463.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1604874156826" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1604876192305">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/-2160.-474.1080.1880/-1080.-463.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1604876192305" />
   </component>
 </project>
