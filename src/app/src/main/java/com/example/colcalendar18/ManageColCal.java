@@ -56,6 +56,7 @@ public class ManageColCal extends AppCompatActivity {
                     } else {
                         b = " ";
                     }
+
                     // Change listener to instantiate class assignment, course, event based on tab selected
                     // Needs to show classes in here
                     Snackbar.make(view, "Add a" + b + tabName.substring(0, tabName.length() - 1), Snackbar.LENGTH_LONG)

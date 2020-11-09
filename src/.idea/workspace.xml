@@ -6,6 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="s" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="AutoImportSettings">
@@ -325,25 +326,29 @@
     </state>
     <state x="2444" y="393" key="FileChooserDialogImpl/0.0.1536.824/1920.-55.1920.1040@1920.-55.1920.1040" timestamp="1603317891051" />
     <state x="699" y="603" key="FileChooserDialogImpl/0.0.2560.1400/-2160.-465.1080.1880/-1080.-454.1080.1880@0.0.2560.1400" timestamp="1603053829069" />
-    <state width="2516" height="304" key="GridCell.Tab.0.bottom" timestamp="1604875401084">
+    <state width="2516" height="271" key="GridCell.Tab.0.bottom" timestamp="1604888088600">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2516" height="304" key="GridCell.Tab.0.bottom/-2160.-474.1080.1880/-1080.-463.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1604875401084" />
+    <state width="2516" height="271" key="GridCell.Tab.0.bottom/-2160.-477.1080.1880/-1080.-466.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1604888088600" />
     <state width="885" height="223" key="GridCell.Tab.0.bottom/0.0.2560.1400/-2160.-465.1080.1880/-1080.-454.1080.1880@0.0.2560.1400" timestamp="1603194444509" />
-    <state width="2516" height="304" key="GridCell.Tab.0.center" timestamp="1604875401084">
+    <state width="2516" height="271" key="GridCell.Tab.0.center" timestamp="1604888088600">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2516" height="304" key="GridCell.Tab.0.center/-2160.-474.1080.1880/-1080.-463.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1604875401084" />
+    <state width="2516" height="271" key="GridCell.Tab.0.center/-2160.-477.1080.1880/-1080.-466.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1604888088600" />
     <state width="885" height="223" key="GridCell.Tab.0.center/0.0.2560.1400/-2160.-465.1080.1880/-1080.-454.1080.1880@0.0.2560.1400" timestamp="1603194444509" />
-    <state width="2516" height="304" key="GridCell.Tab.0.left" timestamp="1604875401084">
+    <state width="2516" height="271" key="GridCell.Tab.0.left" timestamp="1604888088599">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2516" height="304" key="GridCell.Tab.0.left/-2160.-474.1080.1880/-1080.-463.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1604875401084" />
+    <state width="2516" height="271" key="GridCell.Tab.0.left/-2160.-477.1080.1880/-1080.-466.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1604888088599" />
     <state width="885" height="223" key="GridCell.Tab.0.left/0.0.2560.1400/-2160.-465.1080.1880/-1080.-454.1080.1880@0.0.2560.1400" timestamp="1603194444509" />
-    <state width="2516" height="304" key="GridCell.Tab.0.right" timestamp="1604875401084">
+    <state width="2516" height="271" key="GridCell.Tab.0.right" timestamp="1604888088600">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2516" height="304" key="GridCell.Tab.0.right/-2160.-474.1080.1880/-1080.-463.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1604875401084" />
+    <state width="2516" height="271" key="GridCell.Tab.0.right/-2160.-477.1080.1880/-1080.-466.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1604888088600" />
     <state width="885" height="223" key="GridCell.Tab.0.right/0.0.2560.1400/-2160.-465.1080.1880/-1080.-454.1080.1880@0.0.2560.1400" timestamp="1603194444509" />
     <state x="854" y="567" key="com.intellij.ide.util.TipDialog" timestamp="1603405247646">
       <screen x="0" y="0" width="2560" height="1400" />

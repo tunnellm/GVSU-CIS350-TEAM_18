@@ -14,7 +14,7 @@ public class Course {
     int creditHours;
     double classTotal;
     ArrayList<Assignment> assignments = new ArrayList<>();
-    public static ArrayList<Course> courseArrayList = new ArrayList<>();
+    public static HashMap<String, Course> courseHashMap = new HashMap<>();
 
 // Array list of weights here just not sure how to make them corresponds to assignment types yet
 
@@ -48,7 +48,7 @@ public class Course {
     public Course(String courseName, int creditHours) {
         this.courseName = courseName;
         this.creditHours = creditHours;
-        courseArrayList.add(this);
+        courseHashMap.put(this.getCourseName(), this);
     }
 
     public int getCreditHours() {
