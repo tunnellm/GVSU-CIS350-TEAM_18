@@ -14,6 +14,9 @@ public class Course {
     int creditHours;
     double classTotal;
     ArrayList<Assignment> assignments = new ArrayList<>();
+    /*
+    * Courses hashmap for use by other classes.
+    * Automatically adds to hashmap when course is instantiated*/
     public static HashMap<String, Course> courseHashMap = new HashMap<>();
 
 // Array list of weights here just not sure how to make them corresponds to assignment types yet

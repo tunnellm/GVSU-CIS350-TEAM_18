@@ -92,8 +92,8 @@ public class CourseFragment extends Fragment {
                         "Credit Hours: " + String.valueOf(Course.courseHashMap.get(courseListArray.get(position)).getCreditHours());
                 text.setText(string);
                 Toast toast = new Toast(getContext());
-                toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-                toast.setDuration(Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.setDuration(Toast.LENGTH_SHORT);
                 toast.setView(layout);
                 toast.show();
             }
