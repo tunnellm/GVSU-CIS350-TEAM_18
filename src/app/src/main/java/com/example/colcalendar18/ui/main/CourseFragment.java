@@ -61,6 +61,8 @@ public class CourseFragment extends Fragment {
             Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.course_fragment, container, false);
 
+        /* Handles course table in the manage colcalendar table c*/
+
         final ArrayList<String> courseListArray = new ArrayList<>();
 
         Iterator chmIterator = Course.courseHashMap.entrySet().iterator();
