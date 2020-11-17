@@ -6,11 +6,11 @@ public class Assignment {
     private double earnedPoints;
     private String desc;
     private boolean complete;
-    private String type;
+    private double type;
     //Priority = num between 1-100 from some calc in class based on type, points avaliable, and class credits.
     private double priority;
 
-    public Assignment(String type){
+    public Assignment(double type){
         this.type = type;
     }
 
@@ -47,11 +47,11 @@ public class Assignment {
         this.complete = complete;
     }
 
-    public String getType() {
+    public double getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(double type) {
         this.type = type;
     }
 

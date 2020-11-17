@@ -39,24 +39,24 @@
     </ScrollView>
 
     <EditText
-        android:id="@+id/EditCourseName"
+        android:id="@+id/AssignmentName"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="208dp"
-        android:hint="Course Name"
+        android:hint="Assignment Name"
         android:inputType="textCapWords" />
 
     <EditText
-        android:id="@+id/EditCourseHours"
+        android:id="@+id/AssignmentWeighting"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="106dp"
-        android:hint="Credit Hours"
-        android:inputType="text|number" />
+        android:hint="Assignment Weighting"
+        android:inputType="numberDecimal" />
 
 
 

@@ -28,7 +28,7 @@ public class Course {
     }
 
 
-    public void createAssignment(String desc, int totalPoints, String type) {
+    public void createAssignment(String desc, int totalPoints, double type) {
         Assignment temp = new Assignment(type);
 //        calcPriority(temp, 0);
         temp.setTotalPoints(totalPoints);
@@ -38,7 +38,7 @@ public class Course {
         assignments.add(temp);
     }
 
-    public void editAssignment(int index, boolean complete, String desc, double earnedPoints, double totalPoints, String type ){
+    public void editAssignment(int index, boolean complete, String desc, double earnedPoints, double totalPoints, double type ){
         Assignment edit = assignments.get(index);
         edit.setComplete(complete);
         edit.setTotalPoints(totalPoints);

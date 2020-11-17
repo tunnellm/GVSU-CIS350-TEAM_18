@@ -37,7 +37,7 @@ public class ManageColCal extends AppCompatActivity {
         * */
         boolean isTrue = true;
         for (String arg : args) {
-            if (arg.matches("")) {
+            if (arg.equals("")) {
                 isTrue = false;
                 break;
             }
@@ -92,9 +92,12 @@ public class ManageColCal extends AppCompatActivity {
 
                             String courseName = courseField.getText().toString();
                             String courseHours = hoursField.getText().toString();
-                            String snackString = "";
+
+                            Log.d("coursename ", courseName);
+                            Log.d("hourse ", courseHours);
                             if (validateFields(view, courseName, courseHours)){
-                                snackString = "Successfully added " + courseName;
+
+                                String snackString = "Successfully added " + courseName;
                                 Snackbar.make(view, snackString, Snackbar.LENGTH_LONG)
                                         .setAction("Action", null).show();
                                 new Course(courseName, Integer.parseInt(courseHours));
@@ -111,15 +114,36 @@ public class ManageColCal extends AppCompatActivity {
                                 handler.postDelayed(r, 550);
 
                             }
+                            break;
 
-
-                            Log.d("qlop", courseName);
-                            Log.d("qlop2", courseHours);
                         case "assignments":
+                            Log.d("In ASsignments ", tabName);
                             /* spinnerAssignmentField returns the text value of the selected course in the assignments tab*/
                             final Spinner spinnerAssignmentField = (Spinner) findViewById(R.id.CoursesSpinner);
-                            String selectedAssignment = spinnerAssignmentField.getSelectedItem().toString();
-                            Log.d("QOP", selectedAssignment);
+                            String selectedCourse = spinnerAssignmentField.getSelectedItem().toString();
+
+                            final EditText weightingField = findViewById(R.id.AssignmentWeighting);
+                            final EditText assignmentNameField = findViewById(R.id.AssignmentName);
+                            String courseWeighting = weightingField.getText().toString();
+                            String assignmentName = assignmentNameField.getText().toString();
+                            if (validateFields(view, courseWeighting, assignmentName)){
+
+
+                                if(Double.parseDouble(courseWeighting) >= 1) {
+                                    Snackbar.make(view, "Weighting Must Be Less Than 1", Snackbar.LENGTH_LONG)
+                                            .setAction("Action", null).show();
+
+                                    
+                                }
+
+                            }
+                            break;
+                        default:
+                            Log.d("DEFAULT", "yes");
+
+
+
+
                     }
 
 
