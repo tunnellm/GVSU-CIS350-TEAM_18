@@ -48,7 +48,7 @@ public class CourseFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         pageViewModel = ViewModelProviders.of(this).get(PageViewModel.class);
-        int index = 1;
+        int index = 0;
         if (getArguments() != null) {
             index = getArguments().getInt(ARG_SECTION_NUMBER);
         }
@@ -57,7 +57,7 @@ public class CourseFragment extends Fragment {
 
     @Override
     public View onCreateView(
-             LayoutInflater inflater, ViewGroup container,
+            LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.course_fragment, container, false);
 

@@ -28,13 +28,13 @@ public class Course {
     }
 
 
-    public void createAssignment(double priority, boolean complete, String desc, double earnedPoints, double totalPoints, String type) {
+    public void createAssignment(String desc, int totalPoints, String type) {
         Assignment temp = new Assignment(type);
-        calcPriority(temp, 0);
+//        calcPriority(temp, 0);
         temp.setTotalPoints(totalPoints);
-        temp.setEarnedPoints(earnedPoints);
+        temp.setEarnedPoints(0);
         temp.setDesc(desc);
-        temp.setComplete(complete);
+        temp.setComplete(false);
         assignments.add(temp);
     }
 

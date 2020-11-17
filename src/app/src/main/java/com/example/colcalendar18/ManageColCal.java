@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.colcalendar18.ui.main.AssignmentsFragment;
 import com.example.colcalendar18.ui.main.CourseFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -18,6 +19,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 
 import com.example.colcalendar18.ui.main.SectionsPagerAdapter;
 
@@ -26,7 +28,29 @@ import java.util.Objects;
 
 
 public class ManageColCal extends AppCompatActivity {
-        @Override
+
+    private static boolean validateFields(View view, String... args) {
+        /*
+        * For use when validating whether the user has correctly entered information for
+        * each of the required fields of a given form.
+        * :return: returns true if none of the fields match empty string else false
+        * */
+        boolean isTrue = true;
+        for (String arg : args) {
+            if (arg.matches("")) {
+                isTrue = false;
+                break;
+            }
+        }
+        // Makes a snackbar if successfully validated
+        if (!isTrue)
+            Snackbar.make(view, "You forgot to fill out one of the forms", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show();
+
+        return isTrue;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_assignments);
@@ -36,7 +60,10 @@ public class ManageColCal extends AppCompatActivity {
         SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
         ViewPager viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(sectionsPagerAdapter);
+
+        /* This is where we add our tabular fragments*/
         sectionsPagerAdapter.addFragment(new CourseFragment());
+        sectionsPagerAdapter.addFragment(new AssignmentsFragment());
 
         final TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
@@ -53,25 +80,23 @@ public class ManageColCal extends AppCompatActivity {
                     /* Handles adding course, assignments, and events.*/
 
                     switch (tabName) {
-
                         case "courses":
                             /* Handles instantiating courses.
                              * Checks if the user has correctly entered the information in the field
                              * and then instantiates a new course based on that information. Refreshes
                              * if the information has been put in correctly*/
 
+                            /* courseField and hoursField returns the value of the text fields in Course tab*/
                             final EditText courseField = (EditText) findViewById(R.id.EditCourseName);
                             final EditText hoursField = (EditText) findViewById(R.id.EditCourseHours);
 
                             String courseName = courseField.getText().toString();
                             String courseHours = hoursField.getText().toString();
                             String snackString = "";
-                            if (courseName.matches("") || courseHours.matches("")) {
-                                snackString = "You forgot to fill out one of the forms";
+                            if (validateFields(view, courseName, courseHours)){
+                                snackString = "Successfully added " + courseName;
                                 Snackbar.make(view, snackString, Snackbar.LENGTH_LONG)
                                         .setAction("Action", null).show();
-                            } else {
-                                snackString = "Successfully added " + courseName;
                                 new Course(courseName, Integer.parseInt(courseHours));
                                 courseField.getText().clear();
                                 hoursField.getText().clear();
@@ -83,17 +108,18 @@ public class ManageColCal extends AppCompatActivity {
                                     }
                                 };
                                 Handler handler = new Handler();
-                                Snackbar.make(view, snackString, Snackbar.LENGTH_LONG)
-                                        .setAction("Action", null).show();
-                                handler.postDelayed(r, 250);
+                                handler.postDelayed(r, 550);
 
                             }
 
 
                             Log.d("qlop", courseName);
                             Log.d("qlop2", courseHours);
-                        case "ASSIGNMENTS":
-
+                        case "assignments":
+                            /* spinnerAssignmentField returns the text value of the selected course in the assignments tab*/
+                            final Spinner spinnerAssignmentField = (Spinner) findViewById(R.id.CoursesSpinner);
+                            String selectedAssignment = spinnerAssignmentField.getSelectedItem().toString();
+                            Log.d("QOP", selectedAssignment);
                     }
 
 

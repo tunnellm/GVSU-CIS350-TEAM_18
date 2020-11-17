@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">ColCalendar18</string>
     <string name="title_activity_add_assignments">AddAssignments</string>
+    <string name="assignments_spinner_prompt">Choose Course</string>
     <string name="tab_text_1">Courses</string>
     <string name="tab_text_2">Assignments</string>
     <string name="tab_text_3">Events</string>
