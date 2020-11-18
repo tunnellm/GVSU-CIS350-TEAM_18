@@ -17,6 +17,7 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -24,6 +25,7 @@ import android.widget.Spinner;
 import com.example.colcalendar18.ui.main.SectionsPagerAdapter;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Objects;
 
 
@@ -53,17 +55,22 @@ public class ManageColCal extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        /* Instantiate the fragments here before attempting to open table that depends on them*/
+        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
+        sectionsPagerAdapter.addFragment(new CourseFragment());
+        sectionsPagerAdapter.addFragment(new AssignmentsFragment());
+
         setContentView(R.layout.activity_add_assignments);
 
 
 
-        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
+
         ViewPager viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(sectionsPagerAdapter);
 
         /* This is where we add our tabular fragments*/
-        sectionsPagerAdapter.addFragment(new CourseFragment());
-        sectionsPagerAdapter.addFragment(new AssignmentsFragment());
+
 
         final TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
@@ -117,25 +124,56 @@ public class ManageColCal extends AppCompatActivity {
                             break;
 
                         case "assignments":
+                            /*Handles instantiating courses
+                            * Validates if the fields are entered in the fields in the correct manner
+                            * and then instantiates a new assignment via Course Class based on that
+                            * information. Refreshes if the information has been inputted correctly.*/
                             Log.d("In ASsignments ", tabName);
                             /* spinnerAssignmentField returns the text value of the selected course in the assignments tab*/
-                            final Spinner spinnerAssignmentField = (Spinner) findViewById(R.id.CoursesSpinner);
-                            String selectedCourse = spinnerAssignmentField.getSelectedItem().toString();
 
+                            final Spinner spinnerAssignmentField = (Spinner) findViewById(R.id.CoursesSpinner);
                             final EditText weightingField = findViewById(R.id.AssignmentWeighting);
                             final EditText assignmentNameField = findViewById(R.id.AssignmentName);
+                            final EditText assignmentPointsField = findViewById(R.id.AssignmentPoints);
+                            final DatePicker assignmentDueDateField = findViewById(R.id.assignmentsDatePicker);
+
+                            /* The follow holds the values that the user entered in the above fields*/
+                            String selectedCourse = spinnerAssignmentField.getSelectedItem().toString();
                             String courseWeighting = weightingField.getText().toString();
+                            Log.d("boop", courseWeighting);
                             String assignmentName = assignmentNameField.getText().toString();
-                            if (validateFields(view, courseWeighting, assignmentName)){
+                            String assignmentPoints = assignmentPointsField.getText().toString();
 
+                            int assignmentDOM = assignmentDueDateField.getDayOfMonth();
+                            int assignmentMO = assignmentDueDateField.getMonth();
+                            int assignmentYR = assignmentDueDateField.getYear();
 
-                                if(Double.parseDouble(courseWeighting) >= 1) {
-                                    Snackbar.make(view, "Weighting Must Be Less Than 1", Snackbar.LENGTH_LONG)
-                                            .setAction("Action", null).show();
+                            Calendar calendar = Calendar.getInstance();
 
-                                    
+                            /* The follow code snippet displays the correct snackbar string letting the user know what
+                            * information they have incorrectly entered.*/
+                            if (validateFields(view, courseWeighting, assignmentName, assignmentPoints)){
+                                String snackSnack = "";
+                                if(Double.parseDouble(courseWeighting) >= 1)
+                                    snackSnack = "Weighting Must Be Less Than 1";
+                                if(assignmentDOM == calendar.get(Calendar.DAY_OF_MONTH) && assignmentMO == calendar.get(Calendar.MONTH) && assignmentYR == calendar.get(Calendar.YEAR)){
+                                    if(!snackSnack.equals(""))
+                                        snackSnack += "\n";
+                                    snackSnack += "Selected Date Must Be Different From Today's Date";
                                 }
+                                if(snackSnack.equals("")) {
+                                    Log.d("parsedouble", String.valueOf(Double.parseDouble(courseWeighting)));
+                                    Course.courseHashMap.get(selectedCourse).createAssignment(Double.parseDouble(courseWeighting), Integer.parseInt(assignmentPoints), assignmentName, assignmentYR, assignmentMO, assignmentDOM);
+                                    snackSnack = "Correctly Added Assignment to " + selectedCourse;
+                                    assignmentDueDateField.updateDate(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
 
+                                    assignmentPointsField.getText().clear();
+                                    weightingField.getText().clear();
+                                    assignmentNameField.getText().clear();
+
+                                }
+                                Snackbar.make(view, snackSnack, Snackbar.LENGTH_LONG)
+                                        .setAction("Action", null).show();
                             }
                             break;
                         default:

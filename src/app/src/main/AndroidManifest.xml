@@ -12,7 +12,7 @@
         <activity
             android:name=".ManageColCal"
             android:parentActivityName=".MainActivity"
-            android:windowSoftInputMode="adjustResize"
+            android:windowSoftInputMode="adjustPan"
             android:label="@string/title_activity_add_assignments"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".MainActivity">

@@ -28,21 +28,23 @@ public class Course {
     }
 
 
-    public void createAssignment(String desc, int totalPoints, double type) {
-        Assignment temp = new Assignment(type);
+    public void createAssignment(double weighting, int totalPoints, String assignmentName, int year, int month, int dayOfMonth) {
+        Assignment temp = new Assignment();
+        temp.setAssignmentName(assignmentName);
 //        calcPriority(temp, 0);
         temp.setTotalPoints(totalPoints);
         temp.setEarnedPoints(0);
-        temp.setDesc(desc);
+        temp.setWeight(weighting);
         temp.setComplete(false);
+        temp.setDueDate(year, month, dayOfMonth);
         assignments.add(temp);
     }
 
-    public void editAssignment(int index, boolean complete, String desc, double earnedPoints, double totalPoints, double type ){
+    public void editAssignment(int index, boolean complete, double weight, double earnedPoints, double totalPoints, double type ){
         Assignment edit = assignments.get(index);
         edit.setComplete(complete);
         edit.setTotalPoints(totalPoints);
-        edit.setDesc(desc);
+        edit.setWeight(weight);
         edit.setEarnedPoints(earnedPoints);
         edit.setType(type);
         assignments.add(index,edit);
@@ -77,8 +79,8 @@ public class Course {
         return this.courseName;
     }
 
-    public void assignmentsList() {
-        // TO-DO; Populate list with assignments and corresponding weighting
+    public ArrayList<Assignment> assignmentsList() {
+        return assignments;
     }
 
 }
