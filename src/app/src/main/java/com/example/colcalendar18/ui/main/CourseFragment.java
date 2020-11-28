@@ -29,10 +29,11 @@ import com.example.colcalendar18.R;
 import java.util.ArrayList;
 import java.util.*;
 
-/**
- * A placeholder fragment containing a simple view.
- */
+    // Author: Marc
+
 public class CourseFragment extends Fragment {
+
+
 
     private static final String ARG_SECTION_NUMBER = "section_number";
 

@@ -17,10 +17,10 @@ import com.example.colcalendar18.R;
 import java.util.ArrayList;
 import java.util.*;
 
-/**
- * A placeholder fragment containing a simple view.
- */
+    // Author: Marc
 public class AssignmentsFragment extends Fragment {
+
+    // Author: Marc
 
     private static final String ARG_SECTION_NUMBER = "section_number";
     private Spinner spinner;
@@ -57,6 +57,7 @@ public class AssignmentsFragment extends Fragment {
         final ArrayList<String> courseListArray = new ArrayList<>();
 
         Iterator chmIterator = Course.courseHashMap.entrySet().iterator();
+
         while(chmIterator.hasNext()) {
             Map.Entry element = (Map.Entry)chmIterator.next();
             String myCourse = (String) element.getKey();

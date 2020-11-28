@@ -4,11 +4,11 @@ import com.example.colcalendar18.ui.main.CourseFragment;
 
 import java.util.*;
 
-/*
-*
-* */
+    // Author: Marc
 
 public class Course {
+
+
 
     String courseName;
     int creditHours;

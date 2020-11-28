@@ -13,6 +13,9 @@ import java.util.Locale;
 
 public class Assignment {
 
+    // Author: Marc
+    // Edited by: Tom
+
     private double totalPoints;
     private double earnedPoints;
     private double weight;

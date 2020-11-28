@@ -13,12 +13,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf4b9bac-2e34-4cec-90d4-cedd99f2ae91" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/Assignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/Assignment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/ManageColCal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/ManageColCal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/ui/main/AssignmentsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/ui/main/AssignmentsFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/ui/main/CourseFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/ui/main/CourseFragment.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -317,10 +317,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1085" y="406" key="#com.intellij.ide.util.MemberChooser/-2160.-474.1080.1880/-1080.-463.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1604872401499" />
-    <state x="988" y="556" width="442" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1605563947972">
+    <state x="988" y="556" width="442" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1606599437547">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="988" y="556" width="442" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/-2160.-474.1080.1880/-1080.-463.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1605563947972" />
+    <state x="988" y="556" width="442" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/-2160.-474.1080.1880/-1080.-463.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1606599437547" />
     <state x="988" y="556" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.2560.1400/-2160.-465.1080.1880/-1080.-454.1080.1880@0.0.2560.1400" timestamp="1603493762838" />
     <state x="-2111" y="-436" width="1002" height="1216" key="AVDManager" timestamp="1604867922965">
       <screen x="-2160" y="-474" width="1080" height="1880" />

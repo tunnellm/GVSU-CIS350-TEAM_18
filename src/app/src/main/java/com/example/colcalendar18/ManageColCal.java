@@ -28,6 +28,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Objects;
 
+// Author: Marc
+
 
 public class ManageColCal extends AppCompatActivity {
 
@@ -175,6 +177,8 @@ public class ManageColCal extends AppCompatActivity {
                                 Snackbar.make(view, snackSnack, Snackbar.LENGTH_LONG)
                                         .setAction("Action", null).show();
                             }
+                            break;
+                        case "event":
                             break;
                         default:
                             Log.d("DEFAULT", "yes");
