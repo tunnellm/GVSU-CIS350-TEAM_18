@@ -1,5 +1,7 @@
 package com.example.colcalendar18;
 
+import java.util.ArrayList;
+
 /**********************************************************************
  * (Work in Progress)
  * This class contains the properties of an event later used in
@@ -12,6 +14,8 @@ public class Event{
     private int year;
     private String eventName;
     private String eventDescription;
+    public static ArrayList<Event> eventsList = new ArrayList<>();
+
 
     public Event(){
         eventName = "Event";
@@ -27,6 +31,7 @@ public class Event{
         this.month = month;
         this.day = day;
         this.year = year;
+        eventsList.add(this);
     }
 
     public String getEventName() {

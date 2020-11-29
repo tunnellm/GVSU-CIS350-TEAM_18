@@ -40,10 +40,7 @@ public class Assignment {
     @RequiresApi(api = Build.VERSION_CODES.O)
     public String getDueDate() {
         Month.of(this.month).name();
-
         String string = Month.of(this.month + 1).name() + "/" + this.dayOfMonth + "/" + this.year;
-
-
         return string ;
     }
 

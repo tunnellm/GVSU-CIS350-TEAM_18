@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import com.example.colcalendar18.ui.main.AssignmentsFragment;
 import com.example.colcalendar18.ui.main.CourseFragment;
+import com.example.colcalendar18.ui.main.EventFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
@@ -46,7 +47,7 @@ public class ManageColCal extends AppCompatActivity {
                 break;
             }
         }
-        // Makes a snackbar if successfully validated
+        // Makes a snackbar if not successfully validated
         if (!isTrue)
             Snackbar.make(view, "You forgot to fill out one of the forms", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();
@@ -62,22 +63,21 @@ public class ManageColCal extends AppCompatActivity {
         SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
         sectionsPagerAdapter.addFragment(new CourseFragment());
         sectionsPagerAdapter.addFragment(new AssignmentsFragment());
+        sectionsPagerAdapter.addFragment(new EventFragment());
 
         setContentView(R.layout.activity_add_assignments);
-
-
-
 
         ViewPager viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(sectionsPagerAdapter);
 
-        /* This is where we add our tabular fragments*/
 
 
+        // Clicking on tabs and the +1 button
         final TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
         FloatingActionButton fab = findViewById(R.id.fab);
         final Intent intent = getIntent();
+        final Calendar calendar = Calendar.getInstance();
 
 
         fab.setOnClickListener(new View.OnClickListener() {
@@ -102,8 +102,6 @@ public class ManageColCal extends AppCompatActivity {
                             String courseName = courseField.getText().toString();
                             String courseHours = hoursField.getText().toString();
 
-                            Log.d("coursename ", courseName);
-                            Log.d("hourse ", courseHours);
                             if (validateFields(view, courseName, courseHours)){
 
                                 String snackString = "Successfully added " + courseName;
@@ -130,7 +128,6 @@ public class ManageColCal extends AppCompatActivity {
                             * Validates if the fields are entered in the fields in the correct manner
                             * and then instantiates a new assignment via Course Class based on that
                             * information. Refreshes if the information has been inputted correctly.*/
-                            Log.d("In ASsignments ", tabName);
                             /* spinnerAssignmentField returns the text value of the selected course in the assignments tab*/
 
                             final Spinner spinnerAssignmentField = (Spinner) findViewById(R.id.CoursesSpinner);
@@ -140,9 +137,9 @@ public class ManageColCal extends AppCompatActivity {
                             final DatePicker assignmentDueDateField = findViewById(R.id.assignmentsDatePicker);
 
                             /* The follow holds the values that the user entered in the above fields*/
+
                             String selectedCourse = spinnerAssignmentField.getSelectedItem().toString();
                             String courseWeighting = weightingField.getText().toString();
-                            Log.d("boop", courseWeighting);
                             String assignmentName = assignmentNameField.getText().toString();
                             String assignmentPoints = assignmentPointsField.getText().toString();
 
@@ -150,7 +147,7 @@ public class ManageColCal extends AppCompatActivity {
                             int assignmentMO = assignmentDueDateField.getMonth();
                             int assignmentYR = assignmentDueDateField.getYear();
 
-                            Calendar calendar = Calendar.getInstance();
+
 
                             /* The follow code snippet displays the correct snackbar string letting the user know what
                             * information they have incorrectly entered.*/
@@ -164,7 +161,6 @@ public class ManageColCal extends AppCompatActivity {
                                     snackSnack += "Selected Date Must Be Different From Today's Date";
                                 }
                                 if(snackSnack.equals("")) {
-                                    Log.d("parsedouble", String.valueOf(Double.parseDouble(courseWeighting)));
                                     Course.courseHashMap.get(selectedCourse).createAssignment(Double.parseDouble(courseWeighting), Integer.parseInt(assignmentPoints), assignmentName, assignmentYR, assignmentMO, assignmentDOM);
                                     snackSnack = "Correctly Added Assignment to " + selectedCourse;
                                     assignmentDueDateField.updateDate(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
@@ -178,10 +174,28 @@ public class ManageColCal extends AppCompatActivity {
                                         .setAction("Action", null).show();
                             }
                             break;
-                        case "event":
+                        case "events":
+                            final EditText eventNameField = findViewById(R.id.EventName);
+                            final EditText eventDescriptionField = findViewById(R.id.EventDescription);
+                            final DatePicker eventDatePickerField = findViewById(R.id.EventDatePicker);
+
+                            String eventName = eventNameField.getText().toString();
+                            String eventDescription = eventDescriptionField.getText().toString();
+
+                            int eventDOM = eventDatePickerField.getDayOfMonth();
+                            int eventMO = eventDatePickerField.getMonth();
+                            int eventYR = eventDatePickerField.getYear();
+
+                            if(validateFields(view, eventName, eventDescription)) {
+                                new Event(eventName, eventDescription, eventMO, eventDOM, eventYR);
+                                eventNameField.getText().clear();
+                                eventDescriptionField.getText().clear();
+                                eventDatePickerField.updateDate(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
+                                Snackbar.make(view, "Added: " + eventName + "\n" + eventDescription, Snackbar.LENGTH_LONG)
+                                        .setAction("Action", null).show();
+                            }
                             break;
                         default:
-                            Log.d("DEFAULT", "yes");
 
 
 

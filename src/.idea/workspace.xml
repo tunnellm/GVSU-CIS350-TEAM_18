@@ -14,6 +14,12 @@
   <component name="ChangeListManager">
     <list default="true" id="bf4b9bac-2e34-4cec-90d4-cedd99f2ae91" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/Assignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/Assignment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/ManageColCal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/ManageColCal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/ui/main/EventFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/ui/main/EventFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/events_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/events_fragment.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +70,7 @@
     <property name="android-custom-viewC:/Users/tunne/.gradle/caches/modules-2/files-2.1/com.google.android.material/material/1.2.1/37d55d5141066b3d118d24232fa7025b65eb3a74/material-1.2.1-sources.jar!/com/google/android/material/tabs/TabLayout.java_SELECTED" value="TabLayout" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
     <property name="multi-representation-previewC:/Users/tunne/.gradle/caches/modules-2/files-2.1/com.google.android.material/material/1.2.1/37d55d5141066b3d118d24232fa7025b65eb3a74/material-1.2.1-sources.jar!/com/google/android/material/tabs/TabLayout.java_selected" value="Custom views" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
@@ -76,6 +82,7 @@
       <recent name="com.example.colcalendar18.ui.main" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\tunne\OneDrive\Documents\GitHub\GVSU-CIS350-TEAM_18\src\app\src\main\res\layout" />
       <recent name="D:\Users\tunne\OneDrive\Documents\GitHub\GVSU-CIS350-TEAM_18\src\app\src\main\java\com\example\colcalendar18" />
       <recent name="D:\Users\tunne\OneDrive\Documents\GitHub\GVSU-CIS350-TEAM_18\src" />
     </key>
@@ -367,10 +374,14 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1089" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-2160.-474.1080.1880/-1080.-463.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1605650753383" />
-    <state x="-958" y="-472" width="1096" height="1006" maximized="true" key="dock-window-1" timestamp="1605660081078">
+    <state x="-1080" y="-463" width="1096" height="1386" key="dock-window-1" timestamp="1606609623595">
       <screen x="-1080" y="-463" width="1080" height="1880" />
     </state>
-    <state x="-958" y="-472" width="1096" height="1006" maximized="true" key="dock-window-1/-2160.-474.1080.1880/-1080.-463.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1605660081078" />
+    <state x="-1080" y="-463" width="1096" height="1386" key="dock-window-1/-2160.-474.1080.1880/-1080.-463.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1606609623595" />
+    <state x="-1080" y="-463" width="1096" height="1386" key="dock-window-2" timestamp="1606609623595">
+      <screen x="-1080" y="-463" width="1080" height="1880" />
+    </state>
+    <state x="-1080" y="-463" width="1096" height="1386" key="dock-window-2/-2160.-474.1080.1880/-1080.-463.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1606609623595" />
     <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1604876192305">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

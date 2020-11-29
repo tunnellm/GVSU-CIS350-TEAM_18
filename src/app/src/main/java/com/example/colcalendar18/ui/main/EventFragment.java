@@ -17,93 +17,41 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
 
-// Author: Marc
+// Almost 100% Auto-Generated Stub
 public class EventFragment extends Fragment {
 
-// Author: Marc
 
-private static final String ARG_SECTION_NUMBER = "section_number";
-private Spinner spinner;
-private PageViewModel pageViewModel;
 
-public static EventFragment newInstance(int index) {
-    EventFragment fragment = new EventFragment();
-    Bundle bundle = new Bundle();
-    bundle.putInt(ARG_SECTION_NUMBER, index);
-    fragment.setArguments(bundle);
-    return fragment;
-}
+    private static final String ARG_SECTION_NUMBER = "section_number";
+    private Spinner spinner;
+    private PageViewModel pageViewModel;
 
-@Override
-public void onCreate(Bundle savedInstanceState) {
-
-    super.onCreate(savedInstanceState);
-    pageViewModel = ViewModelProviders.of(this).get(PageViewModel.class);
-    int index = 2;
-    if (getArguments() != null) {
-        index = getArguments().getInt(ARG_SECTION_NUMBER);
-    }
-    pageViewModel.setIndex(index);
-}
-
-@Override
-public View onCreateView(
-        LayoutInflater inflater, ViewGroup container,
-        Bundle savedInstanceState) {
-    View view = inflater.inflate(R.layout.assignments_fragment, container, false);
-
-    /* Handles course table in the manage colcalendar table c*/
-
-    final ArrayList<String> courseListArray = new ArrayList<>();
-
-    Iterator chmIterator = Course.courseHashMap.entrySet().iterator();
-
-    while(chmIterator.hasNext()) {
-        Map.Entry element = (Map.Entry)chmIterator.next();
-        String myCourse = (String) element.getKey();
-        courseListArray.add(myCourse);
+    public static EventFragment newInstance(int index) {
+        EventFragment fragment = new EventFragment();
+        Bundle bundle = new Bundle();
+        bundle.putInt(ARG_SECTION_NUMBER, index);
+        fragment.setArguments(bundle);
+        return fragment;
     }
 
-    if (courseListArray.size() == 0) {
-        courseListArray.add("No Courses Added");
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);
+        pageViewModel = ViewModelProviders.of(this).get(PageViewModel.class);
+        int index = 2;
+        if (getArguments() != null) {
+            index = getArguments().getInt(ARG_SECTION_NUMBER);
+        }
+        pageViewModel.setIndex(index);
     }
 
-    Spinner spinner = view.findViewById(R.id.CoursesSpinner);
-    ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, courseListArray);
-    spinner.setAdapter(spinnerAdapter);
+    @Override
+    public View onCreateView(
+            LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.events_fragment, container, false);
 
-
-
-
-
-//        ListView list = (ListView) view.findViewById(R.id.courseList);
-//
-//        ArrayAdapter<String> listViewAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, courseListArray);
-//
-//        list.setAdapter(listViewAdapter);
-//        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                LayoutInflater inflater = getLayoutInflater();
-//                View layout = inflater.inflate(R.layout.custom_toast,
-//                        (ViewGroup) view.findViewById(R.id.custom_toast_container));
-//
-//                TextView text = (TextView) layout.findViewById(R.id.toast_text);
-//                String string = "Course Details\n" +
-//                        "Name: " + Course.courseHashMap.get(courseListArray.get(position)).getCourseName() +"\n" +
-//                        "Credit Hours: " + String.valueOf(Course.courseHashMap.get(courseListArray.get(position)).getCreditHours());
-//                text.setText(string);
-//                Toast toast = new Toast(getContext());
-//                toast.setGravity(Gravity.CENTER, 0, 0);
-//                toast.setDuration(Toast.LENGTH_SHORT);
-//                toast.setView(layout);
-//                toast.show();
-//            }
-//        });
-
-
-
-
-    return view;
-}
+        return view;
+    }
 }
