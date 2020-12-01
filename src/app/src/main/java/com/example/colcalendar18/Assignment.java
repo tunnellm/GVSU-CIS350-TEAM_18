@@ -44,6 +44,12 @@ public class Assignment {
         return string ;
     }
 
+    public int getYear(){ return year;}
+
+    public int getMonth(){return month;}
+
+    public int getDayOfMonth(){ return dayOfMonth;}
+
     public void setAssignmentName(String name) {
         this.assignmentName = name;
     }
