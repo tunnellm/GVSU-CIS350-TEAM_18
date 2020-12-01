@@ -25,14 +25,29 @@ import android.widget.Spinner;
 
 import com.example.colcalendar18.ui.main.SectionsPagerAdapter;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Objects;
 
 // Author: Marc
 
 
 public class ManageColCal extends AppCompatActivity {
+
+    //persistent file names for saving
+    private static final String COURSES_FILE = "courses.txt";
+    private static final String ASSIGNS_FILE = "assigns.txt";
+    private static final String EVENTS_FILE = "events.txt";
+
 
     private static boolean validateFields(View view, String... args) {
         /*
@@ -79,6 +94,12 @@ public class ManageColCal extends AppCompatActivity {
         final Intent intent = getIntent();
         final Calendar calendar = Calendar.getInstance();
 
+        loadCourses();
+        loadAssigns();
+        loadEvents();
+
+
+
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,6 +124,10 @@ public class ManageColCal extends AppCompatActivity {
                             String courseHours = hoursField.getText().toString();
 
                             if (validateFields(view, courseName, courseHours)){
+
+                                //saves course to courses.txt if valid
+                                String printCourse = courseName + " " + courseHours + "\n";
+                                saveToFile(printCourse, COURSES_FILE);
 
                                 String snackString = "Successfully added " + courseName;
                                 Snackbar.make(view, snackString, Snackbar.LENGTH_LONG)
@@ -152,6 +177,11 @@ public class ManageColCal extends AppCompatActivity {
                             /* The follow code snippet displays the correct snackbar string letting the user know what
                             * information they have incorrectly entered.*/
                             if (validateFields(view, courseWeighting, assignmentName, assignmentPoints)){
+
+                                //saves assignments ti assigns.txt if valid
+                                String printAssignment = selectedCourse + " " + courseWeighting + " " + assignmentPoints + " " + assignmentName + " " + assignmentYR + " " + assignmentMO + " " + assignmentDOM + "\n";
+                                saveToFile(printAssignment, ASSIGNS_FILE);
+
                                 String snackSnack = "";
                                 if(Double.parseDouble(courseWeighting) >= 1)
                                     snackSnack = "Weighting Must Be Less Than 1";
@@ -187,6 +217,11 @@ public class ManageColCal extends AppCompatActivity {
                             int eventYR = eventDatePickerField.getYear();
 
                             if(validateFields(view, eventName, eventDescription)) {
+
+                                //saves event to events.txt if valid
+                                String printEvent = eventName + " " + eventDescription + " " + eventMO + " " + eventDOM + " " + eventYR + "\n";
+                                saveToFile(printEvent, EVENTS_FILE);
+
                                 new Event(eventName, eventDescription, eventMO, eventDOM, eventYR);
                                 eventNameField.getText().clear();
                                 eventDescriptionField.getText().clear();
@@ -210,6 +245,132 @@ public class ManageColCal extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void saveToFile(String s, String FILE_NAME){
+        FileOutputStream fos = null;
+        File file = new File(FILE_NAME);
+
+        try {
+            fos = openFileOutput(FILE_NAME, MODE_APPEND);
+            fos.write(s.getBytes());
+            System.out.println("saved");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if(fos != null){
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public void loadCourses() {
+        FileInputStream fis = null;
+        try {
+            fis = openFileInput(COURSES_FILE);
+            InputStreamReader isr = new InputStreamReader(fis);
+            BufferedReader br = new BufferedReader(isr);
+            StringBuilder sb = new StringBuilder();
+            String text;
+            String classString;
+            while ((text = br.readLine()) != null) {
+                sb.append(text).append("\n");
+                classString = text;
+                String str[] = classString.split(" ");
+                List<String> createList = new ArrayList<String>();
+                createList = Arrays.asList(str);
+
+                Course course = new Course(createList.get(0), Integer.parseInt(createList.get(1)));
+
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (fis != null) {
+                try {
+                    fis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public void loadAssigns() {
+        FileInputStream fis = null;
+        try {
+            fis = openFileInput(COURSES_FILE);
+            InputStreamReader isr = new InputStreamReader(fis);
+            BufferedReader br = new BufferedReader(isr);
+            StringBuilder sb = new StringBuilder();
+            String text;
+            String classString;
+            while ((text = br.readLine()) != null) {
+                sb.append(text).append("\n");
+                classString = text;
+                String str[] = classString.split(" ");
+                List<String> createList = new ArrayList<String>();
+                createList = Arrays.asList(str);
+                Assignment assignment = new Assignment();
+//                assignment.setAssignmentName(createList.get(3));
+//                assignment.setDueDate(Integer.parseInt(createList.get(4)), Integer.parseInt(createList.get(5)), Integer.parseInt(createList.get(6)));
+//                assignment.setTotalPoints(Integer.parseInt(createList.get(2)));
+//                assignment.setWeight(Double.parseDouble(createList.get(1)));
+
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (fis != null) {
+                try {
+                    fis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public void loadEvents() {
+        FileInputStream fis = null;
+        try {
+            fis = openFileInput(EVENTS_FILE);
+            InputStreamReader isr = new InputStreamReader(fis);
+            BufferedReader br = new BufferedReader(isr);
+            StringBuilder sb = new StringBuilder();
+            String text;
+            String classString;
+            while ((text = br.readLine()) != null) {
+                sb.append(text).append("\n");
+                classString = text;
+                String str[] = classString.split(" ");
+                List<String> createList = new ArrayList<String>();
+                createList = Arrays.asList(str);
+//                Event event = new Event(createList.get(0), createList.get(1), Integer.parseInt(createList.get(3)), Integer.parseInt(createList.get(4)), Integer.parseInt(createList.get(5)));
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (fis != null) {
+                try {
+                    fis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
 }
