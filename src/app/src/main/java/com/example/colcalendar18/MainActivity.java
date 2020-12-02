@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity
         calendar = (CalendarView) findViewById(R.id.calendar);
         calendar.setDate(calendar.getDate());
 
+        
+
         /* This overwritten method determines if the selected date is a
          * US Holiday using switch/case and if statements to determine
          * the correct date. (10 Total)

@@ -38,7 +38,10 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Objects;
 
-// Author: Marc
+// Author of ManageColCal: Marc
+// Author of Saving Portion: Daniel -- Bug Fixes by Marc
+
+
 
 
 public class ManageColCal extends AppCompatActivity {
@@ -47,7 +50,7 @@ public class ManageColCal extends AppCompatActivity {
     private static final String COURSES_FILE = "courses.txt";
     private static final String ASSIGNS_FILE = "assigns.txt";
     private static final String EVENTS_FILE = "events.txt";
-
+    private static final String DELIMITER = "\f";
 
     private static boolean validateFields(View view, String... args) {
         /*
@@ -126,7 +129,7 @@ public class ManageColCal extends AppCompatActivity {
                             if (validateFields(view, courseName, courseHours)){
 
                                 //saves course to courses.txt if valid
-                                String printCourse = courseName + " " + courseHours + "\n";
+                                String printCourse = courseName + DELIMITER + courseHours + "\n";
                                 saveToFile(printCourse, COURSES_FILE);
 
                                 String snackString = "Successfully added " + courseName;
@@ -179,8 +182,7 @@ public class ManageColCal extends AppCompatActivity {
                             if (validateFields(view, courseWeighting, assignmentName, assignmentPoints)){
 
                                 //saves assignments ti assigns.txt if valid
-                                String printAssignment = selectedCourse + " " + courseWeighting + " " + assignmentPoints + " " + assignmentName + " " + assignmentYR + " " + assignmentMO + " " + assignmentDOM + "\n";
-                                saveToFile(printAssignment, ASSIGNS_FILE);
+
 
                                 String snackSnack = "";
                                 if(Double.parseDouble(courseWeighting) >= 1)
@@ -192,6 +194,9 @@ public class ManageColCal extends AppCompatActivity {
                                 }
                                 if(snackSnack.equals("")) {
                                     Course.courseHashMap.get(selectedCourse).createAssignment(Double.parseDouble(courseWeighting), Integer.parseInt(assignmentPoints), assignmentName, assignmentYR, assignmentMO, assignmentDOM);
+                                    String printAssignment = selectedCourse + DELIMITER + courseWeighting + DELIMITER + assignmentPoints + DELIMITER + assignmentName + DELIMITER + assignmentYR + DELIMITER + assignmentMO + DELIMITER + assignmentDOM + "\n";
+                                    Log.d("PRINT: ASSIGNMENT : ", printAssignment);
+                                    saveToFile(printAssignment, ASSIGNS_FILE);
                                     snackSnack = "Correctly Added Assignment to " + selectedCourse;
                                     assignmentDueDateField.updateDate(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
 
@@ -219,7 +224,7 @@ public class ManageColCal extends AppCompatActivity {
                             if(validateFields(view, eventName, eventDescription)) {
 
                                 //saves event to events.txt if valid
-                                String printEvent = eventName + " " + eventDescription + " " + eventMO + " " + eventDOM + " " + eventYR + "\n";
+                                String printEvent = eventName + DELIMITER + eventDescription + DELIMITER + eventMO + DELIMITER + eventDOM + DELIMITER + eventYR + "\n";
                                 saveToFile(printEvent, EVENTS_FILE);
 
                                 new Event(eventName, eventDescription, eventMO, eventDOM, eventYR);
@@ -282,11 +287,12 @@ public class ManageColCal extends AppCompatActivity {
             while ((text = br.readLine()) != null) {
                 sb.append(text).append("\n");
                 classString = text;
-                String str[] = classString.split(" ");
+                String str[] = classString.split(DELIMITER);
                 List<String> createList = new ArrayList<String>();
                 createList = Arrays.asList(str);
 
                 Course course = new Course(createList.get(0), Integer.parseInt(createList.get(1)));
+
 
             }
         } catch (FileNotFoundException e) {
@@ -307,7 +313,7 @@ public class ManageColCal extends AppCompatActivity {
     public void loadAssigns() {
         FileInputStream fis = null;
         try {
-            fis = openFileInput(COURSES_FILE);
+            fis = openFileInput(ASSIGNS_FILE);
             InputStreamReader isr = new InputStreamReader(fis);
             BufferedReader br = new BufferedReader(isr);
             StringBuilder sb = new StringBuilder();
@@ -316,14 +322,18 @@ public class ManageColCal extends AppCompatActivity {
             while ((text = br.readLine()) != null) {
                 sb.append(text).append("\n");
                 classString = text;
-                String str[] = classString.split(" ");
+                String str[] = classString.split(DELIMITER);
                 List<String> createList = new ArrayList<String>();
                 createList = Arrays.asList(str);
-                Assignment assignment = new Assignment();
-//                assignment.setAssignmentName(createList.get(3));
-//                assignment.setDueDate(Integer.parseInt(createList.get(4)), Integer.parseInt(createList.get(5)), Integer.parseInt(createList.get(6)));
-//                assignment.setTotalPoints(Integer.parseInt(createList.get(2)));
-//                assignment.setWeight(Double.parseDouble(createList.get(1)));
+
+                try {
+                    Course.courseHashMap.get(createList.get(0)).createAssignment(Double.parseDouble(createList.get(1)),
+                            Integer.parseInt(createList.get(2)), createList.get(3), Integer.parseInt(createList.get(4)),
+                            Integer.parseInt(createList.get(5)), Integer.parseInt(createList.get(6)));
+                } catch (IndexOutOfBoundsException c) {
+                    c.printStackTrace();
+                }
+
 
             }
         } catch (FileNotFoundException e) {
@@ -353,10 +363,10 @@ public class ManageColCal extends AppCompatActivity {
             while ((text = br.readLine()) != null) {
                 sb.append(text).append("\n");
                 classString = text;
-                String str[] = classString.split(" ");
+                String str[] = classString.split(DELIMITER);
                 List<String> createList = new ArrayList<String>();
                 createList = Arrays.asList(str);
-//                Event event = new Event(createList.get(0), createList.get(1), Integer.parseInt(createList.get(3)), Integer.parseInt(createList.get(4)), Integer.parseInt(createList.get(5)));
+                new Event(createList.get(0), createList.get(1), Integer.parseInt(createList.get(2)), Integer.parseInt(createList.get(3)), Integer.parseInt(createList.get(4)));
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
