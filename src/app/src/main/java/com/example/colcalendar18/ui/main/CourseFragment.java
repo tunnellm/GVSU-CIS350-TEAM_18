@@ -98,12 +98,12 @@ public class CourseFragment extends Fragment {
                         "Credit Hours: " + Course.courseHashMap.get(courseListArray.get(position)).getCreditHours() + "\n";
                 StringBuilder secondString = new StringBuilder();
 
-
                 /* Functionality for displaying all of the relavent assingment information for each Course in the courses tab*/
+
                 for (Assignment ass : Course.courseHashMap.get(courseListArray.get(position)).assignmentsList()) {
-                    Log.d("Class", String.valueOf(Double.valueOf(ass.getWeight())));
-                    secondString.append("Assignment Name: ").append(ass.getAssignmentName()).append("\n");
-                    secondString.append("Assignment Weighting: ").append(Double.valueOf(ass.getWeight())).append("\n");
+                    secondString.append("\nAssignment Name: ").append(ass.getAssignmentName()).append("\n");
+                    secondString.append("Assignment Weighting: ").append(Double.valueOf(ass.getWeight())).append(", Points: ")
+                            .append(ass.getTotalPoints()).append("\n");
                     secondString.append("Assignment Due Date: ").append(ass.getDueDate()).append("\n");
                 }
                 string += String.valueOf(secondString);

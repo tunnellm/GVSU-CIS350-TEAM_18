@@ -195,7 +195,6 @@ public class ManageColCal extends AppCompatActivity {
                                 if(snackSnack.equals("")) {
                                     Course.courseHashMap.get(selectedCourse).createAssignment(Double.parseDouble(courseWeighting), Integer.parseInt(assignmentPoints), assignmentName, assignmentYR, assignmentMO, assignmentDOM);
                                     String printAssignment = selectedCourse + DELIMITER + courseWeighting + DELIMITER + assignmentPoints + DELIMITER + assignmentName + DELIMITER + assignmentYR + DELIMITER + assignmentMO + DELIMITER + assignmentDOM + "\n";
-                                    Log.d("PRINT: ASSIGNMENT : ", printAssignment);
                                     saveToFile(printAssignment, ASSIGNS_FILE);
                                     snackSnack = "Correctly Added Assignment to " + selectedCourse;
                                     assignmentDueDateField.updateDate(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));

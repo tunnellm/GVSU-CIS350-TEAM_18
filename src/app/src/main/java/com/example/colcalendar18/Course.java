@@ -1,8 +1,11 @@
 package com.example.colcalendar18;
 // import gradeScale
-import com.example.colcalendar18.ui.main.CourseFragment;
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
 
 
+import java.time.LocalDate;
 import java.util.*;
 
     // Author: Marc
@@ -16,6 +19,7 @@ public class Course {
     int creditHours;
     double classTotal;
     ArrayList<Assignment> assignments = new ArrayList<>();
+    final Calendar calendar = Calendar.getInstance();
     /*
     * Courses hashmap for use by other classes.
     * Automatically adds to hashmap when course is instantiated*/
@@ -81,9 +85,42 @@ public class Course {
         return this.courseName;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public void algorithm () {
+
+        // This sorts the assignment via our algorithm based on due date, points, and weighting.
+        // There is logic that handles for when the player assigns a date that is in the next calendar year
+        assignments.sort(new Comparator<Assignment>() {
+                             @Override
+                             public int compare(Assignment first, Assignment second) {
+                                 int f = first.getDOY() - LocalDate.of(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH) + 1, calendar.get(Calendar.DAY_OF_MONTH)).getDayOfYear();
+                                 if (f < 0) {
+                                     f = (first.getDOY() - (365 - LocalDate.of(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH) + 1, calendar.get(Calendar.DAY_OF_MONTH)).getDayOfYear()));
+                                 }
+                                 int s = second.getDOY() - LocalDate.of(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH) + 1, calendar.get(Calendar.DAY_OF_MONTH)).getDayOfYear();
+                                 if (s < 0) {
+                                     s = (second.getDOY() - (365 - LocalDate.of(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH) + 1, calendar.get(Calendar.DAY_OF_MONTH)).getDayOfYear()));
+                                 }
+                                 return (int)
+                                         (
+                                         (f * second.getWeight() * 100) -
+
+                                         (s * first.getWeight()) * 100);
+                             }
+                         }
+
+                );
+
+
+
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public ArrayList<Assignment> assignmentsList() {
+        algorithm();
         return assignments;
     }
+
 
 }
 

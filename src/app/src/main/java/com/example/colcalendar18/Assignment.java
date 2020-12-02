@@ -6,13 +6,14 @@ import android.text.format.DateFormat;
 import androidx.annotation.RequiresApi;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.Month;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
 public class Assignment {
-
+    final Calendar calendar = Calendar.getInstance();
     // Author: Marc
     // Edited by: Tom
 
@@ -39,9 +40,15 @@ public class Assignment {
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public String getDueDate() {
-        Month.of(this.month).name();
+        Month.of(this.month + 1).name();
         String string = Month.of(this.month + 1).name() + "/" + this.dayOfMonth + "/" + this.year;
         return string ;
+    }
+
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public int getDOY() {
+        return LocalDate.of(this.getYear(), this.getMonth() + 1, this.getDayOfMonth()).getDayOfYear();
     }
 
     public int getYear(){ return year;}

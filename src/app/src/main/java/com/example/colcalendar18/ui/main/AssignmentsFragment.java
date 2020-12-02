@@ -66,7 +66,11 @@ public class AssignmentsFragment extends Fragment {
 
         if (courseListArray.size() == 0) {
             courseListArray.add("No Courses Added");
+        } else if (courseListArray.size() > 1 && courseListArray.get(0).equals("No Courses Added")) {
+            courseListArray.remove(0);
+            courseListArray.trimToSize();
         }
+
 
         Spinner spinner = view.findViewById(R.id.CoursesSpinner);
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, courseListArray);

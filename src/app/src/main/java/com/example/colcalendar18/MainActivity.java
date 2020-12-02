@@ -108,8 +108,6 @@ public class MainActivity extends AppCompatActivity
         if (v.getId() == R.id.managecourse) {
 
             /* "Manage ColCalendar button main page */
-            Course oneTest = new Course("Diversity", 3);
-            Course twoTest = new Course("Linear Algebra", 4);
             Intent intent = new Intent(this, ManageColCal.class);
             startActivity(intent);
         }
