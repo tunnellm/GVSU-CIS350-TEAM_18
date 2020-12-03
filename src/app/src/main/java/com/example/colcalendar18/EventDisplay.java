@@ -25,12 +25,11 @@ import java.util.Map;
 // import android.widget.Toast;
 
 /**********************************************************************
- * (WIP)
  *
  * The following class is used by the MainEvent class to find Event
  * names and descriptions on a specific date.
  *
- * @Author Jack Groothuis && Marc
+ * @Author Marc
  *********************************************************************/
 
 public class EventDisplay {
@@ -62,20 +61,29 @@ public class EventDisplay {
             Map.Entry element = (Map.Entry)chmIterator.next();
             Course course = (Course) element.getValue();
             for (Assignment ass : course.assignmentsList()) {
+                String boop = assignmentsStuff(ass);
                 try  {
-                    String boop = assignmentsStuff(ass);
                     if (!hm.get(ass.getDOY()).contains(boop)){
                         hm.get(ass.getDOY()).add(boop);
                     }
                 } catch (NullPointerException q) {
-                    String boop = assignmentsStuff(ass);
                     hm.put(ass.getDOY(), new ArrayList<String>());
                     hm.get(ass.getDOY()).add(boop);
                 }
             }
         }
 
-        // Events by Jack
+        for (Event ev : Event.eventsList) {
+            String evString = "\nEvent: " +  ev.getEventName() + "\nDescription: " + ev.getEventDescription() + "\n";
+            try {
+                if (!hm.get(ev.getDOY()).contains(evString)) {
+                    hm.get(ev.getDOY()).add(evString);
+                }
+            } catch (NullPointerException q) {
+                hm.put(ev.getDOY(), new ArrayList<String>());
+                hm.get(ev.getDOY()).add(evString);
+            }
+        }
 
     }
 
