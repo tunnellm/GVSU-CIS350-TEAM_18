@@ -89,7 +89,7 @@ public class Course {
     public void algorithm () {
 
         // This sorts the assignment via our algorithm based on due date, points, and weighting.
-        // There is logic that handles for when the player assigns a date that is in the next calendar year
+        // It correctly handles assignment due dates on year roll-over
         assignments.sort(new Comparator<Assignment>() {
                              @Override
                              public int compare(Assignment first, Assignment second) {
