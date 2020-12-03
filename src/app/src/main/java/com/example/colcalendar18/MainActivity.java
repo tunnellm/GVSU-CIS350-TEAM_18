@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.Toast;
 
+import java.time.LocalDate;
 import java.util.Calendar;
 
 
@@ -25,14 +27,16 @@ public class MainActivity extends AppCompatActivity
     CalendarView calendar;
     private int notificationID = 1;
     private Button loadCourses;
+    EventDisplay eventDisplay = new EventDisplay();
 
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         calendar = (CalendarView) findViewById(R.id.calendar);
         calendar.setDate(calendar.getDate());
-
         
 
         /* This overwritten method determines if the selected date is a
@@ -40,60 +44,11 @@ public class MainActivity extends AppCompatActivity
          * the correct date. (10 Total)
          */
         calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                switch (month) {
-                    case 0:
-                        if (dayOfMonth == 1) {
-                            Toast.makeText(MainActivity.this, "New Year's Day", Toast.LENGTH_SHORT).show();
-                        }else if (dayOfMonth == 20) {
-                            Toast.makeText(MainActivity.this, "Martin Luther King, Jr. Day", Toast.LENGTH_SHORT).show();
-                        }
-                        break;
-                    case 1:
-                        if (dayOfMonth == 17) {
-                            Toast.makeText(MainActivity.this, "George Washington's Birthday", Toast.LENGTH_SHORT).show();
-                        }
-                        break;
-                    case 4:
-                        if (dayOfMonth == 25) {
-                            Toast.makeText(MainActivity.this, "Memorial Day", Toast.LENGTH_SHORT).show();
-                        }
-                        break;
-                    case 6:
-                        if (dayOfMonth == 4) {
-                            Toast.makeText(MainActivity.this, "Independence Day", Toast.LENGTH_SHORT).show();
-                        }
-                        break;
-                    case 8:
-                        if (dayOfMonth == 7) {
-                            Toast.makeText(MainActivity.this, "Labor Day", Toast.LENGTH_SHORT).show();
-                        }
-                        break;
-                    case 9:
-                        if (dayOfMonth == 12) {
-                            Toast.makeText(MainActivity.this, "Columbus Day", Toast.LENGTH_SHORT).show();
-                        }
-                        break;
-                    case 10:
-                        switch (dayOfMonth) {
-                            case 11:
-                                Toast.makeText(MainActivity.this, "Veterans Day", Toast.LENGTH_SHORT).show();
-                                break;
-                            case 26:
-                                Toast.makeText(MainActivity.this, "Thanksgiving Day", Toast.LENGTH_SHORT).show();
-                            default:
-                                break;
-                        }
-                        break;
-                    case 11:
-                        if (dayOfMonth == 25) {
-                            Toast.makeText(MainActivity.this, "Christmas Day", Toast.LENGTH_SHORT).show();
-                        }
-                        break;
-                    default:
-                        break;
-                }
+                EventDisplay.populateList();
+                eventDisplay.displayInfo(getApplicationContext(), LocalDate.of(year, month + 1, dayOfMonth).getDayOfYear());
             }
         });
 
