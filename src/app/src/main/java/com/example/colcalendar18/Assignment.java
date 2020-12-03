@@ -30,9 +30,6 @@ public class Assignment {
     //Priority = num between 1-100 from some calc in class based on type, points avaliable, and class credits.
     private double priority;
 
-    public Assignment() {
-    }
-
     public void setDueDate(int year, int month, int dayOfMonth) {
         this.year = year;
         this.month = month;
