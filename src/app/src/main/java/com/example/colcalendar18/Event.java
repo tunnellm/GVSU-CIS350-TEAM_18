@@ -1,5 +1,10 @@
 package com.example.colcalendar18;
 
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 /**********************************************************************
@@ -32,6 +37,11 @@ public class Event{
         this.day = day;
         this.year = year;
         eventsList.add(this);
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public int getDOY() {
+        return LocalDate.of(this.getYear(), this.getMonth() + 1, this.getDay()).getDayOfYear();
     }
 
     public String getEventName() {
