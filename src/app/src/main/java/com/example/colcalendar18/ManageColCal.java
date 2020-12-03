@@ -1,47 +1,37 @@
 package com.example.colcalendar18;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.view.View;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.Spinner;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import com.example.colcalendar18.ui.main.AssignmentsFragment;
 import com.example.colcalendar18.ui.main.CourseFragment;
 import com.example.colcalendar18.ui.main.EventFragment;
+import com.example.colcalendar18.ui.main.SectionsPagerAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 
-import androidx.viewpager.widget.ViewPager;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Handler;
-import android.util.Log;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.DatePicker;
-import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.Spinner;
-
-import com.example.colcalendar18.ui.main.SectionsPagerAdapter;
-
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
-import java.util.List;
 import java.util.Objects;
 
-// Author of ManageColCal: Marc
-// Author of Saving Portion: Daniel -- Bug Fixes by Marc
-
-
+/**
+ * This Class manages all of the tabular fragments
+ *
+ * @Author Marc
+ * @Author Daniel
+ */
 
 
 public class ManageColCal extends AppCompatActivity {
@@ -54,10 +44,10 @@ public class ManageColCal extends AppCompatActivity {
 
     private static boolean validateFields(View view, String... args) {
         /*
-        * For use when validating whether the user has correctly entered information for
-        * each of the required fields of a given form.
-        * :return: returns true if none of the fields match empty string else false
-        * */
+         * For use when validating whether the user has correctly entered information for
+         * each of the required fields of a given form.
+         * :return: returns true if none of the fields match empty string else false
+         * */
         boolean isTrue = true;
         for (String arg : args) {
             if (arg.equals("")) {
@@ -89,16 +79,12 @@ public class ManageColCal extends AppCompatActivity {
         viewPager.setAdapter(sectionsPagerAdapter);
 
 
-
         // Clicking on tabs and the +1 button
         final TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
         FloatingActionButton fab = findViewById(R.id.fab);
         final Intent intent = getIntent();
         final Calendar calendar = Calendar.getInstance();
-
-
-
 
 
         fab.setOnClickListener(new View.OnClickListener() {
@@ -123,7 +109,7 @@ public class ManageColCal extends AppCompatActivity {
                             String courseName = courseField.getText().toString();
                             String courseHours = hoursField.getText().toString();
 
-                            if (validateFields(view, courseName, courseHours)){
+                            if (validateFields(view, courseName, courseHours)) {
 
                                 //saves course to courses.txt if valid
                                 String printCourse = courseName + DELIMITER + courseHours + "\n";
@@ -150,9 +136,9 @@ public class ManageColCal extends AppCompatActivity {
 
                         case "assignments":
                             /*Handles instantiating courses
-                            * Validates if the fields are entered in the fields in the correct manner
-                            * and then instantiates a new assignment via Course Class based on that
-                            * information. Refreshes if the information has been inputted correctly.*/
+                             * Validates if the fields are entered in the fields in the correct manner
+                             * and then instantiates a new assignment via Course Class based on that
+                             * information. Refreshes if the information has been inputted correctly.*/
                             /* spinnerAssignmentField returns the text value of the selected course in the assignments tab*/
 
                             final Spinner spinnerAssignmentField = (Spinner) findViewById(R.id.CoursesSpinner);
@@ -175,21 +161,21 @@ public class ManageColCal extends AppCompatActivity {
 
 
                             /* The follow code snippet displays the correct snackbar string letting the user know what
-                            * information they have incorrectly entered.*/
-                            if (validateFields(view, courseWeighting, assignmentName, assignmentPoints)){
+                             * information they have incorrectly entered.*/
+                            if (validateFields(view, courseWeighting, assignmentName, assignmentPoints)) {
 
                                 //saves assignments ti assigns.txt if valid
 
 
                                 String snackSnack = "";
-                                if(Double.parseDouble(courseWeighting) >= 1)
+                                if (Double.parseDouble(courseWeighting) >= 1)
                                     snackSnack = "Weighting Must Be Less Than 1";
-                                if(assignmentDOM == calendar.get(Calendar.DAY_OF_MONTH) && assignmentMO == calendar.get(Calendar.MONTH) && assignmentYR == calendar.get(Calendar.YEAR)){
-                                    if(!snackSnack.equals(""))
+                                if (assignmentDOM == calendar.get(Calendar.DAY_OF_MONTH) && assignmentMO == calendar.get(Calendar.MONTH) && assignmentYR == calendar.get(Calendar.YEAR)) {
+                                    if (!snackSnack.equals(""))
                                         snackSnack += "\n";
                                     snackSnack += "Selected Date Must Be Different From Today's Date";
                                 }
-                                if(snackSnack.equals("")) {
+                                if (snackSnack.equals("")) {
                                     Course.courseHashMap.get(selectedCourse).createAssignment(Double.parseDouble(courseWeighting), Integer.parseInt(assignmentPoints), assignmentName, assignmentYR, assignmentMO, assignmentDOM);
                                     String printAssignment = selectedCourse + DELIMITER + courseWeighting + DELIMITER + assignmentPoints + DELIMITER + assignmentName + DELIMITER + assignmentYR + DELIMITER + assignmentMO + DELIMITER + assignmentDOM + "\n";
                                     saveToFile(printAssignment, ASSIGNS_FILE);
@@ -217,7 +203,7 @@ public class ManageColCal extends AppCompatActivity {
                             int eventMO = eventDatePickerField.getMonth();
                             int eventYR = eventDatePickerField.getYear();
 
-                            if(validateFields(view, eventName, eventDescription)) {
+                            if (validateFields(view, eventName, eventDescription)) {
 
                                 //saves event to events.txt if valid
                                 String printEvent = eventName + DELIMITER + eventDescription + DELIMITER + eventMO + DELIMITER + eventDOM + DELIMITER + eventYR + "\n";
@@ -234,8 +220,6 @@ public class ManageColCal extends AppCompatActivity {
                         default:
 
 
-
-
                     }
 
 
@@ -248,7 +232,7 @@ public class ManageColCal extends AppCompatActivity {
 
     }
 
-    public void saveToFile(String s, String FILE_NAME){
+    public void saveToFile(String s, String FILE_NAME) {
         FileOutputStream fos = null;
         File file = new File(FILE_NAME);
 
@@ -261,7 +245,7 @@ public class ManageColCal extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            if(fos != null){
+            if (fos != null) {
                 try {
                     fos.close();
                 } catch (IOException e) {

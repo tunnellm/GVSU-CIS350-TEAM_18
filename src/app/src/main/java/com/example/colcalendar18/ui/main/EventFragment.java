@@ -4,22 +4,18 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.example.colcalendar18.Course;
 import com.example.colcalendar18.R;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Map;
-
-// Almost 100% Auto-Generated Stub
+/**
+ * Stub that handles the creation of Event Tabular Fragment
+ * * Auto-Generated
+ */
 public class EventFragment extends Fragment {
-
 
 
     private static final String ARG_SECTION_NUMBER = "section_number";

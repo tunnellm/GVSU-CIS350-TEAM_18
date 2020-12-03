@@ -2,23 +2,14 @@ package com.example.colcalendar18;
 
 import android.content.Context;
 import android.os.Build;
-import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import com.example.colcalendar18.Course;
-import com.example.colcalendar18.Event;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.io.FileInputStream;
 import java.util.Map;
 
 
@@ -38,7 +29,7 @@ public class EventDisplay {
     // provides a place to store an ArrayList of strings based on
     // names and descriptions of events
     private static int date;
-    private static HashMap<Integer, List<String>> hm = new HashMap<>();
+    private static final HashMap<Integer, List<String>> hm = new HashMap<>();
 
     // the default constructor assumes the date is some default number
     public EventDisplay() {
@@ -57,13 +48,13 @@ public class EventDisplay {
     public static void populateList() {
         // Assignments by Marc
         Iterator chmIterator = Course.courseHashMap.entrySet().iterator();
-        while(chmIterator.hasNext()) {
-            Map.Entry element = (Map.Entry)chmIterator.next();
+        while (chmIterator.hasNext()) {
+            Map.Entry element = (Map.Entry) chmIterator.next();
             Course course = (Course) element.getValue();
             for (Assignment ass : course.assignmentsList()) {
                 String boop = assignmentsStuff(ass);
-                try  {
-                    if (!hm.get(ass.getDOY()).contains(boop)){
+                try {
+                    if (!hm.get(ass.getDOY()).contains(boop)) {
                         hm.get(ass.getDOY()).add(boop);
                     }
                 } catch (NullPointerException q) {
@@ -74,7 +65,7 @@ public class EventDisplay {
         }
 
         for (Event ev : Event.eventsList) {
-            String evString = "\nEvent: " +  ev.getEventName() + "\nDescription: " + ev.getEventDescription() + "\n";
+            String evString = "\nEvent: " + ev.getEventName() + "\nDescription: " + ev.getEventDescription() + "\n";
             try {
                 if (!hm.get(ev.getDOY()).contains(evString)) {
                     hm.get(ev.getDOY()).add(evString);

@@ -1,21 +1,17 @@
 package com.example.colcalendar18;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlarmManager;
 import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
-import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -26,7 +22,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -34,16 +29,14 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity
         implements View.OnClickListener, Runnable {
 
-    CalendarView calendar;
-    private int notificationID = 1;
-    private Button loadCourses;
-    EventDisplay eventDisplay = new EventDisplay();
     private static final String COURSES_FILE = "courses.txt";
     private static final String ASSIGNS_FILE = "assigns.txt";
     private static final String EVENTS_FILE = "events.txt";
     private static final String DELIMITER = "\f";
-
-
+    CalendarView calendar;
+    EventDisplay eventDisplay = new EventDisplay();
+    private final int notificationID = 1;
+    private Button loadCourses;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -53,7 +46,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         calendar = (CalendarView) findViewById(R.id.calendar);
         calendar.setDate(calendar.getDate());
-        
+
 
         /* This overwritten method determines if the selected date is a
          * US Holiday using switch/case and if statements to determine
@@ -83,9 +76,9 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
         }
         //Intent for notification
-        Intent intent = new Intent(MainActivity.this , notificationReciever.class);
+        Intent intent = new Intent(MainActivity.this, notificationReciever.class);
         intent.putExtra("notificationID", notificationID);
-        intent.putExtra("message" , "You have an assignment due soon");
+        intent.putExtra("message", "You have an assignment due soon");
 
         //Pending Intent for notification
         PendingIntent pendingIntent = PendingIntent.getBroadcast(MainActivity.this, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
@@ -93,21 +86,21 @@ public class MainActivity extends AppCompatActivity
         //Alarm manager for timing of notification.
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
-            if (v.getId() == R.id.notificationon) {
-                for (Map.Entry<String, Course> stringCourseEntry : Course.courseHashMap.entrySet()) {
-                    Map.Entry element = (Map.Entry) stringCourseEntry;
-                    Course curCourse = (Course) element.getValue();
-                    for (int i = 0; i < curCourse.assignments.size(); i++) {
-                        Calendar curDate = Calendar.getInstance();
-                        int day = curCourse.assignments.get(i).getDayOfMonth();
-                        int month = curCourse.assignments.get(i).getMonth()  ;
-                        int year = curCourse.assignments.get(i).getYear();
-                        if ((day == curDate.get(Calendar.DAY_OF_MONTH) || (day - 1) == curDate.get(Calendar.DAY_OF_MONTH)) && (curDate.get(Calendar.MONTH) == month) && (curDate.get(Calendar.YEAR) == year)) {
-                            alarmManager.set(AlarmManager.RTC_WAKEUP, curDate.getTimeInMillis(), pendingIntent);
-                        }
+        if (v.getId() == R.id.notificationon) {
+            for (Map.Entry<String, Course> stringCourseEntry : Course.courseHashMap.entrySet()) {
+                Map.Entry element = (Map.Entry) stringCourseEntry;
+                Course curCourse = (Course) element.getValue();
+                for (int i = 0; i < curCourse.assignments.size(); i++) {
+                    Calendar curDate = Calendar.getInstance();
+                    int day = curCourse.assignments.get(i).getDayOfMonth();
+                    int month = curCourse.assignments.get(i).getMonth();
+                    int year = curCourse.assignments.get(i).getYear();
+                    if ((day == curDate.get(Calendar.DAY_OF_MONTH) || (day - 1) == curDate.get(Calendar.DAY_OF_MONTH)) && (curDate.get(Calendar.MONTH) == month) && (curDate.get(Calendar.YEAR) == year)) {
+                        alarmManager.set(AlarmManager.RTC_WAKEUP, curDate.getTimeInMillis(), pendingIntent);
                     }
                 }
             }
+        }
 
     }
 
@@ -134,7 +127,7 @@ public class MainActivity extends AppCompatActivity
             while ((text = br.readLine()) != null) {
                 sb.append(text).append("\n");
                 classString = text;
-                String str[] = classString.split(DELIMITER);
+                String[] str = classString.split(DELIMITER);
                 List<String> createList = new ArrayList<String>();
                 createList = Arrays.asList(str);
 
@@ -169,7 +162,7 @@ public class MainActivity extends AppCompatActivity
             while ((text = br.readLine()) != null) {
                 sb.append(text).append("\n");
                 classString = text;
-                String str[] = classString.split(DELIMITER);
+                String[] str = classString.split(DELIMITER);
                 List<String> createList = new ArrayList<String>();
                 createList = Arrays.asList(str);
 
@@ -210,7 +203,7 @@ public class MainActivity extends AppCompatActivity
             while ((text = br.readLine()) != null) {
                 sb.append(text).append("\n");
                 classString = text;
-                String str[] = classString.split(DELIMITER);
+                String[] str = classString.split(DELIMITER);
                 List<String> createList = new ArrayList<String>();
                 createList = Arrays.asList(str);
                 new Event(createList.get(0), createList.get(1), Integer.parseInt(createList.get(2)), Integer.parseInt(createList.get(3)), Integer.parseInt(createList.get(4)));

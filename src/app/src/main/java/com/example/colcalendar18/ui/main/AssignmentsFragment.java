@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.Spinner;
 
 import androidx.fragment.app.Fragment;
@@ -15,12 +14,16 @@ import com.example.colcalendar18.Course;
 import com.example.colcalendar18.R;
 
 import java.util.ArrayList;
-import java.util.*;
+import java.util.Iterator;
+import java.util.Map;
 
-    // Author: Marc
+/**
+ * Handles some of the logic for the Assignment Tabular Fragment that
+ * is not handles by ManageColCal
+ *
+ * @Author Marc
+ */
 public class AssignmentsFragment extends Fragment {
-
-    // Author: Marc
 
     private static final String ARG_SECTION_NUMBER = "section_number";
     private Spinner spinner;
@@ -58,8 +61,8 @@ public class AssignmentsFragment extends Fragment {
 
         Iterator chmIterator = Course.courseHashMap.entrySet().iterator();
 
-        while(chmIterator.hasNext()) {
-            Map.Entry element = (Map.Entry)chmIterator.next();
+        while (chmIterator.hasNext()) {
+            Map.Entry element = (Map.Entry) chmIterator.next();
             String myCourse = (String) element.getKey();
             courseListArray.add(myCourse);
         }
@@ -75,38 +78,6 @@ public class AssignmentsFragment extends Fragment {
         Spinner spinner = view.findViewById(R.id.CoursesSpinner);
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, courseListArray);
         spinner.setAdapter(spinnerAdapter);
-
-
-
-
-
-//        ListView list = (ListView) view.findViewById(R.id.courseList);
-//
-//        ArrayAdapter<String> listViewAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, courseListArray);
-//
-//        list.setAdapter(listViewAdapter);
-//        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                LayoutInflater inflater = getLayoutInflater();
-//                View layout = inflater.inflate(R.layout.custom_toast,
-//                        (ViewGroup) view.findViewById(R.id.custom_toast_container));
-//
-//                TextView text = (TextView) layout.findViewById(R.id.toast_text);
-//                String string = "Course Details\n" +
-//                        "Name: " + Course.courseHashMap.get(courseListArray.get(position)).getCourseName() +"\n" +
-//                        "Credit Hours: " + String.valueOf(Course.courseHashMap.get(courseListArray.get(position)).getCreditHours());
-//                text.setText(string);
-//                Toast toast = new Toast(getContext());
-//                toast.setGravity(Gravity.CENTER, 0, 0);
-//                toast.setDuration(Toast.LENGTH_SHORT);
-//                toast.setView(layout);
-//                toast.show();
-//            }
-//        });
-
-
-
 
         return view;
     }

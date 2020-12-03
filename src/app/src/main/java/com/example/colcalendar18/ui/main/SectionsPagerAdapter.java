@@ -1,7 +1,6 @@
 package com.example.colcalendar18.ui.main;
 
 import android.content.Context;
-import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;

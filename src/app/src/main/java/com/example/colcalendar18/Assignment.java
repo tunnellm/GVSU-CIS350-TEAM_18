@@ -1,21 +1,22 @@
 package com.example.colcalendar18;
 
 import android.os.Build;
-import android.text.format.DateFormat;
 
 import androidx.annotation.RequiresApi;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
+
+/**
+ * This Object holds relevant information for assignments as input by the end-user
+ *
+ * @Author Marc
+ * @Author Tom
+ */
 
 public class Assignment {
     final Calendar calendar = Calendar.getInstance();
-    // Author: Marc
-    // Edited by: Tom
 
     private double totalPoints;
     private double earnedPoints;
@@ -29,7 +30,7 @@ public class Assignment {
     //Priority = num between 1-100 from some calc in class based on type, points avaliable, and class credits.
     private double priority;
 
-    public Assignment(){
+    public Assignment() {
     }
 
     public void setDueDate(int year, int month, int dayOfMonth) {
@@ -42,7 +43,7 @@ public class Assignment {
     public String getDueDate() {
         Month.of(this.month + 1).name();
         String string = Month.of(this.month + 1).name() + "/" + this.dayOfMonth + "/" + this.year;
-        return string ;
+        return string;
     }
 
 
@@ -51,18 +52,24 @@ public class Assignment {
         return LocalDate.of(this.getYear(), this.getMonth() + 1, this.getDayOfMonth()).getDayOfYear();
     }
 
-    public int getYear(){ return year;}
+    public int getYear() {
+        return year;
+    }
 
-    public int getMonth(){return month;}
+    public int getMonth() {
+        return month;
+    }
 
-    public int getDayOfMonth(){ return dayOfMonth;}
-
-    public void setAssignmentName(String name) {
-        this.assignmentName = name;
+    public int getDayOfMonth() {
+        return dayOfMonth;
     }
 
     public String getAssignmentName() {
         return this.assignmentName;
+    }
+
+    public void setAssignmentName(String name) {
+        this.assignmentName = name;
     }
 
     public double getTotalPoints() {
@@ -112,7 +119,6 @@ public class Assignment {
     public void setPriority(double priority) {
         this.priority = priority;
     }
-
 
 
 }

@@ -10,6 +10,12 @@ import android.os.Build;
 
 import androidx.core.app.NotificationCompat;
 
+/**
+ * Handles notifications for the calendar Assignments
+ *
+ * @Author Tom
+ */
+
 public class notificationReciever extends BroadcastReceiver {
 
     private static final String CHANNEL_ID = "channel";
@@ -17,7 +23,7 @@ public class notificationReciever extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        int notificationID = intent.getIntExtra("notificationID" , 0);
+        int notificationID = intent.getIntExtra("notificationID", 0);
         String message = intent.getStringExtra("message");
 
         Intent mainIntent = new Intent(context, MainActivity.class);
@@ -26,7 +32,7 @@ public class notificationReciever extends BroadcastReceiver {
 
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             CharSequence channelName = "My Notification";
             int importance = NotificationManager.IMPORTANCE_DEFAULT;
 

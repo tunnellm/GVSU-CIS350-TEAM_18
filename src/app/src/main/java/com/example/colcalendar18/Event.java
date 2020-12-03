@@ -13,16 +13,16 @@ import java.util.ArrayList;
  * the Calendar class
  * @author Daniel Rose
  *********************************************************************/
-public class Event{
+public class Event {
+    public static ArrayList<Event> eventsList = new ArrayList<>();
     private int month;
     private int day;
     private int year;
     private String eventName;
     private String eventDescription;
-    public static ArrayList<Event> eventsList = new ArrayList<>();
 
 
-    public Event(){
+    public Event() {
         eventName = "Event";
         eventDescription = "Event Description";
         month = 1;
@@ -30,7 +30,7 @@ public class Event{
         year = 2020;
     }
 
-    public Event(String eventName, String eventDescription, int month, int day, int year){
+    public Event(String eventName, String eventDescription, int month, int day, int year) {
         this.eventName = eventName;
         this.eventDescription = eventDescription;
         this.month = month;
@@ -39,61 +39,11 @@ public class Event{
         eventsList.add(this);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    public int getDOY() {
-        return LocalDate.of(this.getYear(), this.getMonth() + 1, this.getDay()).getDayOfYear();
-    }
-
-    public String getEventName() {
-        return eventName;
-    }
-
-    public String getEventDescription() {
-        return eventDescription;
-    }
-
-    public int getMonth() {
-        return month;
-    }
-
-    public int getDay() {
-        return day;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public void setEventName(String eventName) {
-        this.eventName = eventName;
-    }
-
-    public void setEventDescription(String eventDescription) {
-        this.eventDescription = eventDescription;
-    }
-
-    public void setMonth(int month) {
-        this.month = month;
-    }
-
-    public void setDay(int day) {
-        this.day = day;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
-
-    public String getInfo(){
-        return eventName + ": " + eventDescription + " | Month: "
-                + month + " Day: " + day + " Year: " + year;
-    }
-
-    public static void main(String[] args){
+    public static void main(String[] args) {
         System.out.println("---Testing Current Methods---");
         Event e0 = new Event();
         System.out.println(e0.getInfo());
-        Event e1 = new Event("Career Fair", "GVSU Career Fair", 1 , 1 , 1);
+        Event e1 = new Event("Career Fair", "GVSU Career Fair", 1, 1, 1);
         System.out.println(e1.getEventName());
         e1.setEventName("GVSU Career Fair");
         System.out.println(e1.getEventDescription());
@@ -107,6 +57,56 @@ public class Event{
         System.out.println("Change info with set methods...");
         System.out.println(e1.getInfo());
         System.out.println("---All Methods Tested---");
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public int getDOY() {
+        return LocalDate.of(this.getYear(), this.getMonth() + 1, this.getDay()).getDayOfYear();
+    }
+
+    public String getEventName() {
+        return eventName;
+    }
+
+    public void setEventName(String eventName) {
+        this.eventName = eventName;
+    }
+
+    public String getEventDescription() {
+        return eventDescription;
+    }
+
+    public void setEventDescription(String eventDescription) {
+        this.eventDescription = eventDescription;
+    }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public void setMonth(int month) {
+        this.month = month;
+    }
+
+    public int getDay() {
+        return day;
+    }
+
+    public void setDay(int day) {
+        this.day = day;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public String getInfo() {
+        return eventName + ": " + eventDescription + " | Month: "
+                + month + " Day: " + day + " Year: " + year;
     }
 
 }

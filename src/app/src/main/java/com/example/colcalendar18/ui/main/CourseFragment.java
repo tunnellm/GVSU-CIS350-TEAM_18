@@ -1,11 +1,7 @@
 package com.example.colcalendar18.ui.main;
 
-import android.app.ListActivity;
-import android.icu.text.Edits;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,11 +11,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.colcalendar18.Assignment;
@@ -27,12 +20,16 @@ import com.example.colcalendar18.Course;
 import com.example.colcalendar18.R;
 
 import java.util.ArrayList;
-import java.util.*;
+import java.util.Iterator;
+import java.util.Map;
 
-    // Author: Marc
+/**
+ * This class handles all of the logic for the Course Tabular Fragment
+ *
+ * @Author Marc
+ */
 
 public class CourseFragment extends Fragment {
-
 
 
     private static final String ARG_SECTION_NUMBER = "section_number";
@@ -69,8 +66,8 @@ public class CourseFragment extends Fragment {
         final ArrayList<String> courseListArray = new ArrayList<>();
 
         Iterator chmIterator = Course.courseHashMap.entrySet().iterator();
-        while(chmIterator.hasNext()) {
-            Map.Entry element = (Map.Entry)chmIterator.next();
+        while (chmIterator.hasNext()) {
+            Map.Entry element = (Map.Entry) chmIterator.next();
             String myCourse = (String) element.getKey();
             courseListArray.add(myCourse);
         }
@@ -88,13 +85,13 @@ public class CourseFragment extends Fragment {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-              LayoutInflater inflater = getLayoutInflater();
-              View layout = inflater.inflate(R.layout.custom_toast,
-                                (ViewGroup) view.findViewById(R.id.custom_toast_container));
+                LayoutInflater inflater = getLayoutInflater();
+                View layout = inflater.inflate(R.layout.custom_toast,
+                        (ViewGroup) view.findViewById(R.id.custom_toast_container));
 
                 TextView text = (TextView) layout.findViewById(R.id.toast_text);
                 String string = "Course Details\n" +
-                        "Name: " + Course.courseHashMap.get(courseListArray.get(position)).getCourseName() +"\n" +
+                        "Name: " + Course.courseHashMap.get(courseListArray.get(position)).getCourseName() + "\n" +
                         "Credit Hours: " + Course.courseHashMap.get(courseListArray.get(position)).getCreditHours() + "\n";
                 StringBuilder secondString = new StringBuilder();
 
@@ -115,8 +112,6 @@ public class CourseFragment extends Fragment {
                 toast.show();
             }
         });
-
-
 
 
         return view;
