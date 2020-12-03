@@ -14,19 +14,14 @@
   <component name="ChangeListManager">
     <list default="true" id="bf4b9bac-2e34-4cec-90d4-cedd99f2ae91" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/Assignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/Assignment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/ManageColCal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/ManageColCal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/ui/main/AssignmentsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/ui/main/AssignmentsFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/ui/main/CourseFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/ui/main/CourseFragment.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_2_API_30]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -404,9 +399,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1089" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-2160.-474.1080.1880/-1080.-463.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1605650753383" />
-    <state x="20" y="-14" width="1096" height="1007" maximized="true" key="dock-window-1" timestamp="1606943013468">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="-1072" y="-482" width="463" height="1353" key="dock-window-1" timestamp="1606956447780">
+      <screen x="-1080" y="-463" width="1080" height="1880" />
     </state>
+    <state x="-1072" y="-482" width="463" height="1353" key="dock-window-1/-2160.-474.1080.1880/-1080.-463.1080.1880/0.0.2560.1400@-1080.-463.1080.1880" timestamp="1606956447780" />
     <state x="20" y="-14" width="1096" height="1007" maximized="true" key="dock-window-1/-2160.-474.1080.1880/-1080.-463.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1606943013468" />
     <state x="-1080" y="-463" width="1096" height="1386" key="dock-window-2" timestamp="1606609623595">
       <screen x="-1080" y="-463" width="1080" height="1880" />
