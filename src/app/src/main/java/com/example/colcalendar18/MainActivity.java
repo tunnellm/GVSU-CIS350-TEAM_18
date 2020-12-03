@@ -17,6 +17,8 @@ import android.widget.CalendarView;
 import android.widget.Toast;
 
 import java.util.Calendar;
+import java.util.Iterator;
+import java.util.Map;
 
 
 public class MainActivity extends AppCompatActivity
@@ -123,12 +125,18 @@ public class MainActivity extends AppCompatActivity
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
             if (v.getId() == R.id.notificationon) {
-                Calendar dueDate = Calendar.getInstance();
-                Calendar curDate = Calendar.getInstance();
-                //Add For loops here that loops through all courses
-                    //Add for loop here that loops through all assignments in said courses and puts them into dueDate then checks with if statement
-                if ( curDate.get(Calendar.DAY_OF_MONTH) == dueDate.get(Calendar.DAY_OF_MONTH) && curDate.get(Calendar.MONTH) == dueDate.get(Calendar.MONTH)){
-                    alarmManager.set(AlarmManager.RTC_WAKEUP, curDate.getTimeInMillis(), pendingIntent );
+                for (Map.Entry<String, Course> stringCourseEntry : Course.courseHashMap.entrySet()) {
+                    Map.Entry element = (Map.Entry) stringCourseEntry;
+                    Course curCourse = (Course) element.getValue();
+                    for (int i = 0; i < curCourse.assignments.size(); i++) {
+                        Calendar curDate = Calendar.getInstance();
+                        int day = curCourse.assignments.get(i).getDayOfMonth();
+                        int month = curCourse.assignments.get(i).getMonth()  ;
+                        int year = curCourse.assignments.get(i).getYear();
+                        if ((day == curDate.get(Calendar.DAY_OF_MONTH) || (day - 1) == curDate.get(Calendar.DAY_OF_MONTH)) && (curDate.get(Calendar.MONTH) == month) && (curDate.get(Calendar.YEAR) == year)) {
+                            alarmManager.set(AlarmManager.RTC_WAKEUP, curDate.getTimeInMillis(), pendingIntent);
+                        }
+                    }
                 }
             }
 
