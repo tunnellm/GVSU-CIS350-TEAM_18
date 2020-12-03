@@ -97,9 +97,6 @@ public class ManageColCal extends AppCompatActivity {
         final Intent intent = getIntent();
         final Calendar calendar = Calendar.getInstance();
 
-        loadCourses();
-        loadAssigns();
-        loadEvents();
 
 
 
@@ -274,112 +271,5 @@ public class ManageColCal extends AppCompatActivity {
         }
     }
 
-    public void loadCourses() {
-        FileInputStream fis = null;
-        try {
-            fis = openFileInput(COURSES_FILE);
-            InputStreamReader isr = new InputStreamReader(fis);
-            BufferedReader br = new BufferedReader(isr);
-            StringBuilder sb = new StringBuilder();
-            String text;
-            String classString;
-            while ((text = br.readLine()) != null) {
-                sb.append(text).append("\n");
-                classString = text;
-                String str[] = classString.split(DELIMITER);
-                List<String> createList = new ArrayList<String>();
-                createList = Arrays.asList(str);
-
-                Course course = new Course(createList.get(0), Integer.parseInt(createList.get(1)));
-
-
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (fis != null) {
-                try {
-                    fis.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-
-    public void loadAssigns() {
-        FileInputStream fis = null;
-        try {
-            fis = openFileInput(ASSIGNS_FILE);
-            InputStreamReader isr = new InputStreamReader(fis);
-            BufferedReader br = new BufferedReader(isr);
-            StringBuilder sb = new StringBuilder();
-            String text;
-            String classString;
-            while ((text = br.readLine()) != null) {
-                sb.append(text).append("\n");
-                classString = text;
-                String str[] = classString.split(DELIMITER);
-                List<String> createList = new ArrayList<String>();
-                createList = Arrays.asList(str);
-
-                try {
-                    Course.courseHashMap.get(createList.get(0)).createAssignment(Double.parseDouble(createList.get(1)),
-                            Integer.parseInt(createList.get(2)), createList.get(3), Integer.parseInt(createList.get(4)),
-                            Integer.parseInt(createList.get(5)), Integer.parseInt(createList.get(6)));
-                } catch (IndexOutOfBoundsException c) {
-                    c.printStackTrace();
-                }
-
-
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (fis != null) {
-                try {
-                    fis.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-
-    public void loadEvents() {
-        FileInputStream fis = null;
-        try {
-            fis = openFileInput(EVENTS_FILE);
-            InputStreamReader isr = new InputStreamReader(fis);
-            BufferedReader br = new BufferedReader(isr);
-            StringBuilder sb = new StringBuilder();
-            String text;
-            String classString;
-            while ((text = br.readLine()) != null) {
-                sb.append(text).append("\n");
-                classString = text;
-                String str[] = classString.split(DELIMITER);
-                List<String> createList = new ArrayList<String>();
-                createList = Arrays.asList(str);
-                new Event(createList.get(0), createList.get(1), Integer.parseInt(createList.get(2)), Integer.parseInt(createList.get(3)), Integer.parseInt(createList.get(4)));
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (fis != null) {
-                try {
-                    fis.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
 
 }
