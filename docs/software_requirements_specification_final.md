@@ -22,7 +22,7 @@
 | FR4 | The application shall have the capability to notify the user when an assignment is within 48 hours of completion. | TC1 |
 | FR5 | The application shall load all assignments from persistent memory on application startup. | TC2 |
 | FR6 | The application shall correctly distribute each loaded assignment to the proper course. | TC1,TC2 |
-| … | … | … |
+
 
 ### <Persistent Memory>
 | ID | Requirement | Test Cases |
@@ -30,7 +30,7 @@
 | FR7 | The application shall save new courses when added by the user and validated. | TC1 |
 | FR8 | The application shall save new events when added by the user. | TC2 |
 | FR9 | The application shall save new assignments when added by the user and validated. | TC1,TC2 |
-| … | … | … |
+
 
 ### <User Input: Events>
 | ID | Requirement | Test Cases |
