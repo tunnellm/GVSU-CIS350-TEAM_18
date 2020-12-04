@@ -90,20 +90,28 @@ public class CourseFragment extends Fragment {
                         (ViewGroup) view.findViewById(R.id.custom_toast_container));
 
                 TextView text = (TextView) layout.findViewById(R.id.toast_text);
-                String string = "Course Details\n" +
-                        "Name: " + Course.courseHashMap.get(courseListArray.get(position)).getCourseName() + "\n" +
-                        "Credit Hours: " + Course.courseHashMap.get(courseListArray.get(position)).getCreditHours() + "\n";
-                StringBuilder secondString = new StringBuilder();
+                String string;
+                if (courseListArray.get(0) == "No Courses Added") {
+                    string = "\uD83D\uDCA9";
+                    string = new String(new char[1000]).replace("\0", string);
+                } else {
+                    string = "Course Details\n" +
+                            "Name: " + Course.courseHashMap.get(courseListArray.get(position)).getCourseName() + "\n" +
+                            "Credit Hours: " + Course.courseHashMap.get(courseListArray.get(position)).getCreditHours() + "\n";
+                    StringBuilder secondString = new StringBuilder();
 
-                /* Functionality for displaying all of the relavent assingment information for each Course in the courses tab*/
+                    /* Functionality for displaying all of the relavent assingment information for each Course in the courses tab*/
 
-                for (Assignment ass : Course.courseHashMap.get(courseListArray.get(position)).assignmentsList()) {
-                    secondString.append("\nAssignment Name: ").append(ass.getAssignmentName()).append("\n");
-                    secondString.append("Assignment Weighting: ").append(Double.valueOf(ass.getWeight())).append(", Points: ")
-                            .append(ass.getTotalPoints()).append("\n");
-                    secondString.append("Assignment Due Date: ").append(ass.getDueDate()).append("\n");
+                    for (Assignment ass : Course.courseHashMap.get(courseListArray.get(position)).assignmentsList()) {
+                        secondString.append("\nAssignment Name: ").append(ass.getAssignmentName()).append("\n");
+                        secondString.append("Assignment Weighting: ").append(Double.valueOf(ass.getWeight())).append(", Points: ")
+                                .append(ass.getTotalPoints()).append("\n");
+                        secondString.append("Assignment Due Date: ").append(ass.getDueDate()).append("\n");
+                    }
+                    string += String.valueOf(secondString);
                 }
-                string += String.valueOf(secondString);
+
+
 
                 text.setText(string);
                 Toast toast = new Toast(getContext());

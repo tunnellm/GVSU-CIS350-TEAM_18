@@ -14,13 +14,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bf4b9bac-2e34-4cec-90d4-cedd99f2ae91" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/Assignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/Assignment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/ManageColCal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/ManageColCal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/notificationReciever.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/notificationReciever.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/ui/main/AssignmentsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/ui/main/AssignmentsFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/ui/main/CourseFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/ui/main/CourseFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/ui/main/EventFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/colcalendar18/ui/main/EventFragment.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -419,9 +413,13 @@
       <screen x="-1080" y="-463" width="1080" height="1880" />
     </state>
     <state x="-1080" y="-463" width="1096" height="1386" key="dock-window-2/-2160.-474.1080.1880/-1080.-463.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1606609623595" />
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1604876192305">
+    <state x="936" y="330" key="run.anything.popup" timestamp="1607039155331">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/-2160.-474.1080.1880/-1080.-463.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1604876192305" />
+    <state x="936" y="330" key="run.anything.popup/-2160.-474.1080.1880/-1080.-463.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1607039155331" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1607043470750">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/-2160.-474.1080.1880/-1080.-463.1080.1880/0.0.2560.1400@0.0.2560.1400" timestamp="1607043470750" />
   </component>
 </project>
