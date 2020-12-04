@@ -17,7 +17,7 @@
 | FR3 | The application shall allow for the user to create events with Event Name, Description, and Date of Event. | TC1,TC2 |
 | … | … | … |
 
-### <User Input: Assignments>
+### User Input: Assignments
 | ID | Requirement | Test Cases |
 | :-------------: | :----------: | :----------: |
 | FR4 | The application shall have the capability to notify the user when an assignment is within 48 hours of completion. | TC1 |
@@ -25,7 +25,7 @@
 | FR6 | The application shall correctly distribute each loaded assignment to the proper course. | TC1,TC2 |
 
 
-### <Persistent Memory>
+### Persistent Memory
 | ID | Requirement | Test Cases |
 | :-------------: | :----------: | :----------: |
 | FR7 | The application shall save new courses when added by the user and validated. | TC1 |
@@ -33,33 +33,33 @@
 | FR9 | The application shall save new assignments when added by the user and validated. | TC1,TC2 |
 
 
-### <User Input: Events>
+### User Input: Events
 | ID | Requirement | Test Cases |
 | :-------------: | :----------: | :----------: |
 | FR10 | The application shall load all events from persistent memory on application startup. | TC1 |
 | FR11 | The application shall take into account leap year to correctly display dates. | TC2 |
 | FR12 | The application shall include all major U.S. Federal holidays automatically. | TC1,TC2 |
-| … | … | … |
 
-### <Calendar Display>
+
+### Calendar Display
 | ID | Requirement | Test Cases |
 | :-------------: | :----------: | :----------: |
 | FR13 | The application shall display events happening on the selected day on the front page calendar. | TC1 |
 | FR14 | The application shall display assignments happening on the selected day on the front page calendar. | TC2 |
 | FR15 | The application shall display Assignment information for each Course when selected by the user. | TC1,TC2 |
-| … | … | … |
+
 
 ## Non-Functional Requirements
 
-### <Loading>
+### Loading
 | ID | Requirement | Test Cases |
 | :-------------: | :----------: | :----------: |
 | NFR1 | The application shall load from persistent memory without impacting startup performance. | TC4 |
 | NFR2 | The application shall load from persistent memory without data loss between multiple application instances. | TBD |
 | NFR3 | The application shall load from persistent memory without requiring extra permissions by the user. | TC6 |
-| … | … | … |
 
-### <Generate To-Do List>
+
+### Generate To-Do List
 | ID | Requirement | Test Cases |
 | :-------------: | :----------: | :----------: |
 | NFR4 | The application shall calculate the optimal order of completion for each assignment per course. | TC4 |
@@ -67,7 +67,7 @@
 | NFR6 | The application shall display assignments in a manner that is easy to be understood by the user at a glance. | TC6 |
 | … | … | … |
 
-### <Graphical User Interface>
+### Graphical User Interface
 | ID | Requirement | Test Cases |
 | :-------------: | :----------: | :----------: |
 | NFR7 | The application shall have a graphical user interface that is easily navigated by the user. | TC4 |
@@ -75,7 +75,7 @@
 | NFR9 | The application shall have a graphical user interface that is navigatable without application crashing. | TC6 |
 | … | … | … |
 
-### <Saving>
+### Saving
 | ID | Requirement | Test Cases |
 | :-------------: | :----------: | :----------: |
 | NFR10 | The application shall not require extra permissions to save to persistent memory. | TC4 |
@@ -83,7 +83,7 @@
 | NFR12 | The application shall never require input from the user to save or load data. | TC6 |
 | … | … | … |
 
-### <Application Stability>
+### Application Stability
 | ID | Requirement | Test Cases |
 | :-------------: | :----------: | :----------: |
 | NFR13 | The application shall be lightweight, with minimal usage of device computing resources. | TC4 |
