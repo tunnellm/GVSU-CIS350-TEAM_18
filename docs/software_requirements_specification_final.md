@@ -15,7 +15,7 @@
 | FR1 | The application shall allow for the user to create course categories that are static per semester. | TC1 |
 | FR2 | The application shall allow for the user to create assignments for each course category. | TC2 |
 | FR3 | The application shall allow for the user to create events with Event Name, Description, and Date of Event. | TC1,TC2 |
-| … | … | … |
+
 
 ### User Input: Assignments
 | ID | Requirement | Test Cases |
@@ -65,7 +65,7 @@
 | NFR4 | The application shall calculate the optimal order of completion for each assignment per course. | TC4 |
 | NFR5 | The application shall display the assignments in order of optimal completion on the selected course page. | TBD |
 | NFR6 | The application shall display assignments in a manner that is easy to be understood by the user at a glance. | TC6 |
-| … | … | … |
+
 
 ### Graphical User Interface
 | ID | Requirement | Test Cases |
@@ -73,7 +73,7 @@
 | NFR7 | The application shall have a graphical user interface that is easily navigated by the user. | TC4 |
 | NFR8 | The application shall take user input on a range of different device models. | TBD |
 | NFR9 | The application shall have a graphical user interface that is navigatable without application crashing. | TC6 |
-| … | … | … |
+
 
 ### Saving
 | ID | Requirement | Test Cases |
@@ -81,7 +81,7 @@
 | NFR10 | The application shall not require extra permissions to save to persistent memory. | TC4 |
 | NFR11 | The application shall save to persistent memory without affecting the performance of the application or the user experience thereof. | TBD |
 | NFR12 | The application shall never require input from the user to save or load data. | TC6 |
-| … | … | … |
+
 
 ### Application Stability
 | ID | Requirement | Test Cases |
@@ -89,7 +89,7 @@
 | NFR13 | The application shall be lightweight, with minimal usage of device computing resources. | TC4 |
 | NFR14 | The application shall reload from a dormant state providing a seamless user experience. | TBD |
 | NFR15 | The application shall run alongside other applications without any interruption in performance | TC6 |
-| … | … | … |
+
 
 # Test Specification
 
