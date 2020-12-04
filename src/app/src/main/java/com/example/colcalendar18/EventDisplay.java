@@ -51,15 +51,15 @@ public class EventDisplay {
         while (chmIterator.hasNext()) {
             Map.Entry element = (Map.Entry) chmIterator.next();
             Course course = (Course) element.getValue();
-            for (Assignment ass : course.assignmentsList()) {
-                String boop = assignmentsStuff(ass);
+            for (Assignment a : course.assignmentsList()) {
+                String boop = assignmentsStuff(a);
                 try {
-                    if (!hm.get(ass.getDOY()).contains(boop)) {
-                        hm.get(ass.getDOY()).add(boop);
+                    if (!hm.get(a.getDOY()).contains(boop)) {
+                        hm.get(a.getDOY()).add(boop);
                     }
                 } catch (NullPointerException q) {
-                    hm.put(ass.getDOY(), new ArrayList<String>());
-                    hm.get(ass.getDOY()).add(boop);
+                    hm.put(a.getDOY(), new ArrayList<String>());
+                    hm.get(a.getDOY()).add(boop);
                 }
             }
         }
