@@ -9,6 +9,7 @@
 ## Functional Requirements
 
 ### <User-Created Categories>
+
 | ID | Requirement | Test Cases |
 | :-------------: | :----------: | :----------: |
 | FR1 | The application shall allow for the user to create course categories that are static per semester. | TC1 |
