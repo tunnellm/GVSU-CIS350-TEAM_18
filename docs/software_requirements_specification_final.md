@@ -12,8 +12,8 @@
 
 | ID | Requirement | Test Cases |
 | :-------------: | :----------: | :----------: |
-| FR1 | The application shall allow for the user to create course categories with credit hours that are static per semester. | TC1 |
-| FR2 | The application shall allow for the user to create assignments with Point Value and Weighting for each course category. | TC2 |
+| FR1 | The application shall allow for the user to create course categories with credit hours that contain assignment objects as described below. | TC1, TC2, TC3, TC4, TC5, TC6, TC7 |
+| FR2 | The application shall allow for the user to create assignments with Point Value and Weighting for each course category. | TC2, TC3, TC4, TC5, TC6, TC7 |
 | FR3 | The application shall allow for the user to create events with Event Name, Description, and Date of Event. |  |
 | FR4 | The application shall save new courses when added by the user and validated. |  |
 | FR5 | The application shall save new events when added by the user. |  |
@@ -23,7 +23,7 @@
 ### User Input: Created Categories
 | ID | Requirement | Test Cases |
 | :-------------: | :----------: | :----------: |
-| FR7 | The application shall have the capability to notify the user when an assignment is within 48 hours of completion. |  |
+| FR7 | The application shall have the capability to notify the user when an assignment is within 48 hours of completion. | TC6 |
 | FR8 | The application shall load all assignments from persistent memory on application startup. |  |
 | FR9 | The application shall correctly distribute each loaded assignment to the proper course. |  |
 | FR10 | The application shall load all events from persistent memory on application startup. |  |
@@ -60,18 +60,17 @@
 | NFR7 | The application shall display the assignments in order of optimal completion on the selected course page. |  |
 | NFR8 | The application shall display assignments in a manner that is easy to be understood by the user at a glance. |  |
 | NFR9 | The application shall have a graphical user interface that is easily navigated by the user. |  |
-| NFR10 | The application shall take user input on a range of different device models. |  |
-| NFR11 | The application shall have a graphical user interface that is navigatable without application crashing. |  |
+| NFR10 | The application shall have a graphical user interface that is navigatable without application crashing. |  |
 
 
 ### Application Stability
 | ID | Requirement | Test Cases |
 | :-------------: | :----------: | :----------: |
-| NFR12 | The application shall be lightweight, with minimal usage of device computing resources. |  |
-| NFR13 | The application shall reload from a dormant state providing a seamless user experience. |  |
-| NFR14 | The application shall run alongside other applications without any interruption in performance. |  |
-| NFR15 | The application shall run without major bugs or crashing issues |  |
-| NFR16 | The application shall save to persistent memory without affecting the performance of the application or the user experience thereof. |  |
+| NFR11 | The application shall be lightweight, with minimal usage of device computing resources. |  |
+| NFR12 | The application shall reload from a dormant state providing a seamless user experience. |  |
+| NFR13 | The application shall run alongside other applications without any interruption in performance. |  |
+| NFR14 | The application shall run without major bugs or crashing issues |  |
+| NFR15 | The application shall save to persistent memory without affecting the performance of the application or the user experience thereof. |  |
 
 
 # Test Specification
@@ -91,27 +90,27 @@
 
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
-| TC3 | Assignment Name Validation | Open The Application, Ensure that a dummy Course has been created for testing, Navigate to MANAGE COLCALENDAR, Navigate to Assignments, Select the dummy Course, enter information for all fields except for name, Press +1  | 100, .1 | Error Message Stating: "You forgot to fill out one of the forms" | Error Message Stating: "You forgot to fill out one of the forms" | PASS | FR2 |
+| TC3 | Assignment Name Validation | Open The Application, Ensure that a dummy Course has been created for testing, Navigate to MANAGE COLCALENDAR, Navigate to Assignments, Select the dummy Course, enter information for all fields except for name, Press +1  | 100, .1 | Error Message Stating: "You forgot to fill out one of the forms" | Error Message Stating: "You forgot to fill out one of the forms" | PASS | FR1, FR2 |
 
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
-| TC4 | Assignment Course Created Validation | On a fresh install, Open The Application, Navigate to MANAGE COLCALENDAR, Navigate to Assignments, Enter information for all fields and select a date, Press +1 | Ass Name, 100, .1 | Error message stating: "Add a course first!" | Error message stating: "Add a course first!" | PASS | FR1, FR2 |
+| TC4 | Assignment Course Created Validation | On a fresh install, Open The Application, Navigate to MANAGE COLCALENDAR, Navigate to Assignments, Enter information for all fields and select a date, Press +1 | Ass Name, 100, .1, Date 1 Greater Than Today | Error message stating: "Add a course first!" | Error message stating: "Add a course first!" | PASS | FR1, FR2 |
 
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
-| TC5 | <TC1 description> | <steps to execute TC1> | <input values to this test case> | <expected output as a result of test case> | <actual output of test case> | <did it pass or fail?> | <requirement IDs this test case is linked to> |
+| TC5 | Assignment Weighting Greater Than 1 Required | Open The Application, Ensure that a dummy Course has been created for testing, Navigate to MANAGE COLCALENDAR, Navigate to Assignments, Select the dummy Course, enter information in all fields, Press +1 | Ass Name 2, 100, 10, Date 1 Greater Than Today | Error Message Stating: "Weighting Must Be Less Than 1" | Error Message Stating: "Weighting Must Be Less Than 1" | PASS | FR1,FR2 |
 
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
-| TC6 | <TC1 description> | <steps to execute TC1> | <input values to this test case> | <expected output as a result of test case> | <actual output of test case> | <did it pass or fail?> | <requirement IDs this test case is linked to> |
+| TC6 | Assignment Date Validation | Open The Application, Ensure that a dummy Course has been created for testing, Navigate to MANAGE COLCALENDAR, Navigate to Assignments, Select the dummy Course, enter information in all fields, Press +1 | Ass Name 3, 100, 10, Same Date as Current Date | Error Message Stating: "Selected Date Must Be Different From Today's Date" | Error Message Stating: "Selected Date Must Be Different From Today's Date" | PASS | FR1, FR2 |
 
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
-| TC7 | <TC1 description> | <steps to execute TC1> | <input values to this test case> | <expected output as a result of test case> | <actual output of test case> | <did it pass or fail?> | <requirement IDs this test case is linked to> |
+| TC7 | Assignment Points Validation | Open The Application, Ensure that a dummy Course has been created for testing, Navigate to MANAGE COLCALENDAR, Navigate to Assignments, Select the dummy Course, enter information for all fields except for name, Press +1  | QWERTY, .1 | Error Message Stating: "You forgot to fill out one of the forms" | Error Message Stating: "You forgot to fill out one of the forms" | PASS | FR1, FR2 |
 
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
-| TC8 | <TC1 description> | <steps to execute TC1> | <input values to this test case> | <expected output as a result of test case> | <actual output of test case> | <did it pass or fail?> | <requirement IDs this test case is linked to> |
+| TC8 | Event Name Validation | <steps to execute TC1> | <input values to this test case> | <expected output as a result of test case> | <actual output of test case> | <did it pass or fail?> | <requirement IDs this test case is linked to> |
 
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |

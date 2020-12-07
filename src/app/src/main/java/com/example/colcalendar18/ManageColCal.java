@@ -169,7 +169,7 @@ public class ManageColCal extends AppCompatActivity {
 
                                 String snackSnack = "";
                                 if (Double.parseDouble(courseWeighting) >= 1)
-                                    snackSnack = "Weighting Must Be Less Than 1";
+                                    snackSnack = "Weighting Must Be Less Than 1\n";
                                 if (selectedCourse.equals("No Courses Added"))
                                     snackSnack += "Add a course first!";
                                 if (assignmentDOM == calendar.get(Calendar.DAY_OF_MONTH) && assignmentMO == calendar.get(Calendar.MONTH) && assignmentYR == calendar.get(Calendar.YEAR)) {
