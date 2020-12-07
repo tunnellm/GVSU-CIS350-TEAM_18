@@ -190,3 +190,6 @@
 * [README.md](https://github.com/tunnellm/GVSU-CIS350-TEAM_18/blob/master/README.md)
 * [proposal 10-04.md](https://github.com/tunnellm/GVSU-CIS350-TEAM_18/blob/master/docs/proposal%2010-04.md)
 * [proposal 9-27.md](https://github.com/tunnellm/GVSU-CIS350-TEAM_18/blob/master/docs/proposal%209-27.md)
+* []()
+* []()
+* []()
