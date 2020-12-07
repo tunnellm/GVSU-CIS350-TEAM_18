@@ -30,7 +30,7 @@ import java.util.Objects;
  * This Class manages all of the tabular fragments
  *
  * @Author Marc
- * @Author Daniel
+ * saveToFile by @Daniel Rose
  */
 
 

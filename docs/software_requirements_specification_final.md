@@ -132,4 +132,16 @@
 
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
-| TC13 | User-Creation of Courses | Open The Application, Navigate to MANAGE COLCALENDAR, Enter Information For All Fields, Press +1 | Beep Boop, 5 | Message Stating: "Successfully Added Beep Boop" | Message Stating: "Successfully Added Beep Boop" | PASS | FR1, FR4, FR17 |
+| TC13 | User-Creation of Courses | Open The Application, Navigate to MANAGE COLCALENDAR, Enter Information For All Fields, Press +1 | Beep Boop, 5 | Message Stating: "Successfully Added Beep Boop" | Message Stating: "Successfully Added Beep Boop" | PASS | FR1, FR4, FR17, NFR4, NFR5 |
+
+| ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
+| :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
+| TC14 | User-Creation of Assignment | Open The Application, Ensure that at least one dummy Course (Made for testing purposes) has been made, Navigate to MANAGE COLCALENDAR, Navigate to ASSIGNMENTS, Enter Information For All Fields, Press +1 | Dummy Course Name, Ass 3, 100, .2, Date 1 Greater than Today's date | Message Stating: "Successfully Added Assignment to {}" where {} is the name of the dummy course | Message Stating: "Successfully Added Bb" | PASS | FR1, FR2, FR6, NFR4, NFR5 |
+
+| ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
+| :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
+| TC15 | User-Creation of Event | Open The Application, Navigate to MANAGE COLCALENDAR, Navigate to EVENTS, Enter Information For All Fields, Press +1 | Event Name, Event Description | Message Stating: "Added Event Name\nEvent Description"  | Message Stating: "Added Event Name\nEvent Description" | PASS | FR3, FR5, FR11, NFR5 |
+
+| ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
+| :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
+| TC16 | Display Assignments in Order | Open The Application, Ensure that a dummy course and assignments have been made (course and assignments from previous tests count), Navigate to MANAGE COLCALENDAR, Select the course that was previously made | Press the name of the course | Message Stating: "Course Details\nName {1}\nCredits Hours:{2}\n\nAssignment Name{3}\nAssignment Weighting{4}, Points: {5}\nAssignment Due Date:{6} *n" Where {1} is the Course name, {2} is the Course Credit hours {3} is the Assignment name. {4} is the Assignment Weighting, {5} is the Assignment points, {6} is the Assignment Due Date and n is the last three fields repeated with information from the amount of Assignments instantiated in the Course   | Message Stating: "Course Details\nName:Bb\nCredit Hours:11\n\nAssignment Name: Ass 3\nAssignmentWeighting:0.1, Points:100.0\nAssignment Due Date: DECEMBER/8/2020\n\nAssignment Name:100\nAssignment Weighting: 0.1, Points: 100.0\nAssignment Due Date:DECEMBER/6/2021" | PASS | FR1, FR2, FR9, FR16, NFR6, NFR7, NFR9, NFR10 |
