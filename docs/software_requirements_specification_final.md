@@ -23,7 +23,7 @@
 ### User Input: Created Categories
 | ID | Requirement | Test Cases |
 | :-------------: | :----------: | :----------: |
-| FR7 | The application shall have the capability to notify the user when an assignment is within 48 hours of completion. | TBD |
+| FR7 | The application shall have the capability to notify the user when an assignment is within 48 hours of completion. | TC22 |
 | FR8 | The application shall load all assignments from persistent memory on application startup. | TC20 |
 | FR9 | The application shall correctly distribute each loaded assignment to the proper course. | TC16, TC19 |
 | FR10 | The application shall load all events from persistent memory on application startup. | TC17, TC21, TC22 |
@@ -170,7 +170,7 @@
 
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
-| TC22 | Application Notification | Open The Application, Ensure that an Assignment has been created with a date within 48 of today, Press Turn On Notifications, Wait for Notification | Assignment (Created in Earlier Test or as described in TC13/TC14 if fresh install) | Notification With Text Stating: “ColCal\nYou have an assignment due soon”  | Notification With Text Stating: “ColCal\nYou have an assignment due soon” | PASS | FR10, FR11, FR13, FR14, NFR9, NFR10, NFR11, NFR14, NFR15 |
+| TC22 | Application Notification | Open The Application, Ensure that an Assignment has been created with a date within 48 of today, Press Turn On Notifications, Wait for Notification | Assignment (Created in Earlier Test or as described in TC13/TC14 if fresh install) | Notification With Text Stating: “ColCal\nYou have an assignment due soon”  | Notification With Text Stating: “ColCal\nYou have an assignment due soon” | PASS | FR7, FR10, FR11, FR13, FR14, NFR9, NFR10, NFR11, NFR14, NFR15 |
 
 # Software Artifacts
 
