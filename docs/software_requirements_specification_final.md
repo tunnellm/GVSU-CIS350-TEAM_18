@@ -176,11 +176,15 @@
 
 > The following section contains all of the links for all of the software development artifacts that we have created throughout the semester. This shows the progress we have made as a team over the course of the semester.
 
+* [software_requirements_specification_final.md](https://github.com/tunnellm/GVSU-CIS350-TEAM_18/blob/master/docs/software_requirements_specification_final.md)
+* [software_requirements_specification.md (Midterm)](https://github.com/tunnellm/GVSU-CIS350-TEAM_18/blob/master/docs/software_requirements_specification.md)
 * [Extended UserAssingments Description.MD](https://github.com/tunnellm/GVSU-CIS350-TEAM_18/blob/master/artifacts/use_case_diagrams/Extend%20UserAssignments%20Description.MD)
-* []()
-* []()
-* []()
-* []()
-* []()
-* []()
-* []()
+* [UML_Use-Case_Create_Classifications.pdf](https://github.com/tunnellm/GVSU-CIS350-TEAM_18/blob/master/artifacts/use_case_diagrams/UML_Use-Case_Create_Classifications.pdf)
+* [Use-Case 10-11.pdf](https://github.com/tunnellm/GVSU-CIS350-TEAM_18/blob/master/artifacts/use_case_diagrams/Use-Case%2010-11.pdf)
+* [UserInputAssignments.pdf](https://github.com/tunnellm/GVSU-CIS350-TEAM_18/blob/master/artifacts/use_case_diagrams/UserInputAssignments.pdf)
+* [Burn Down Chart 10-23-2020.pdf](https://github.com/tunnellm/GVSU-CIS350-TEAM_18/blob/master/docs/Burn%20Down%20Chart%2010-23-2020.pdf)
+* [High-Level Tasks.md](https://github.com/tunnellm/GVSU-CIS350-TEAM_18/blob/master/docs/High-Level%20Tasks.md)
+* [Midterm Slides.pdf](https://github.com/tunnellm/GVSU-CIS350-TEAM_18/blob/master/docs/Midterm%20Slides.pdf)
+* [README.md](https://github.com/tunnellm/GVSU-CIS350-TEAM_18/blob/master/README.md)
+* [proposal 10-04.md](https://github.com/tunnellm/GVSU-CIS350-TEAM_18/blob/master/docs/proposal%2010-04.md)
+* [proposal 9-27.md](https://github.com/tunnellm/GVSU-CIS350-TEAM_18/blob/master/docs/proposal%209-27.md)
