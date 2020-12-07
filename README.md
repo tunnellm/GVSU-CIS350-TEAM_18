@@ -25,5 +25,7 @@ Project description (~1 paragraph)
 	1. Default APK
 	1. Before launch, Grade-aware Make
 	1. Save Configuration
+	
+	
 1.Launch Android Emulator
 1.Press Play to Install APK
