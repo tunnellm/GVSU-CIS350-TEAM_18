@@ -178,6 +178,7 @@
 
 * [software_requirements_specification_final.md](https://github.com/tunnellm/GVSU-CIS350-TEAM_18/blob/master/docs/software_requirements_specification_final.md)
 * [software_requirements_specification.md (Midterm)](https://github.com/tunnellm/GVSU-CIS350-TEAM_18/blob/master/docs/software_requirements_specification.md)
+* [Burn Down Chart 12-7-20.pdf](https://github.com/tunnellm/GVSU-CIS350-TEAM_18/blob/master/docs/Burn%20Down%20Chart%2012-7-20.pdf)
 * [Extended UserAssingments Description.MD](https://github.com/tunnellm/GVSU-CIS350-TEAM_18/blob/master/artifacts/use_case_diagrams/Extend%20UserAssignments%20Description.MD)
 * [UML_Use-Case_Create_Classifications.pdf](https://github.com/tunnellm/GVSU-CIS350-TEAM_18/blob/master/artifacts/use_case_diagrams/UML_Use-Case_Create_Classifications.pdf)
 * [Use-Case 10-11.pdf](https://github.com/tunnellm/GVSU-CIS350-TEAM_18/blob/master/artifacts/use_case_diagrams/Use-Case%2010-11.pdf)
