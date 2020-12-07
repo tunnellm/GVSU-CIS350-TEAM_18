@@ -149,3 +149,12 @@
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
 | TC17 | Display User-Instantiated Classes | Open the application, ensure that dummy Courses, Assignments, and Events have been created on a date (Assignments, Courses, and Events from previous testing works), Click on a date that has an event or assignment, or both, created, and validate output. | Date Of Event And/or Assignment | There are multiple outputs that are valid, Valid Assignment Output: Assignment Name:{1}\nAssignment Weighting:{2}, Points:{3}\nAssignment Due Date:{4} Where {1} is the name of the Assignment Object, {2} is the Weighting of the Assignments, {3} is the TotalPoints of the Assignments and {4} is the Due Date of the Assignment -- Valid Events Output: Event:{1}\nDescription:{2} Where {1} is the name of the Event, {2} is the Description of the event. Valid No Output: No Events -- If there are no events, the last output will appear. On a date with an assignment and/or event, valid assignment and/or event will appear in-line. | Message Stating: "Assignment Name: Ass 3\nAssignment Weighting: 0.1, Points: 100.0\n Assignment Due Date: DECEMBER/8/2020\n\nEvent: Event Name\nDescription: Event Description" | PASS | FR10, FR11, FR13, FR14, FR15, NFR5, NFR9, NFR10 |
+
+## System Tests
+
+| ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
+| :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
+| TC18 | Application Startup | Open The Application | Press Application ColCalendar18 from App Menu | The Application Opens Without Crashing | The Application Opened Without Crashing | PASS | NFR12, NFR14 |
+
+# Software Artifacts
+
