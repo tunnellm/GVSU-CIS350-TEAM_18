@@ -21,9 +21,9 @@ Project description (~1 paragraph)
 1. Download Pixel 2 With API 30
 1. Press New > Import Project > src
 1. Create New Run Configuration
-1.1. Set Module To ColCalendarApp
-1.1. Default APK
-1.1. Before launch, Grade-aware Make
-1.1. Save Configuration
+	1. Set Module To ColCalendarApp
+	1. Default APK
+	1. Before launch, Grade-aware Make
+	1. Save Configuration
 1.Launch Android Emulator
 1.Press Play to Install APK
