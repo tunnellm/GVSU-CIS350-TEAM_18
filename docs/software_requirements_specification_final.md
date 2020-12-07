@@ -23,7 +23,7 @@
 ### User Input: Created Categories
 | ID | Requirement | Test Cases |
 | :-------------: | :----------: | :----------: |
-| FR7 | The application shall have the capability to notify the user when an assignment is within 48 hours of completion. | |
+| FR7 | The application shall have the capability to notify the user when an assignment is within 48 hours of completion. | TBD |
 | FR8 | The application shall load all assignments from persistent memory on application startup. | TC20 |
 | FR9 | The application shall correctly distribute each loaded assignment to the proper course. | TC16, TC19 |
 | FR10 | The application shall load all events from persistent memory on application startup. | TC17, TC21, TC22 |
@@ -58,7 +58,7 @@
 | :-------------: | :----------: | :----------: |
 | NFR6 | The application shall calculate the optimal order of completion for each assignment per course. | TC16 |
 | NFR7 | The application shall display the assignments in order of optimal completion on the selected course page. | TC16 |
-| NFR8 | The application shall display assignments in a manner that is easy to be understood by the user at a glance. |  |
+| NFR8 | The application shall display assignments in a manner that is easy to be understood by the user at a glance. | TBD |
 | NFR9 | The application shall have a graphical user interface that is easily navigated by the user. | TC16, TC17, TC19, TC20, TC21, TC22 |
 | NFR10 | The application shall have a graphical user interface that is navigatable without application crashing. | TC16, TC17, TC19, TC20, TC21, TC22 |
 
@@ -68,7 +68,7 @@
 | :-------------: | :----------: | :----------: |
 | NFR11 | The application shall be lightweight, with minimal usage of device computing resources. | TC22 |
 | NFR12 | The application shall reload from a dormant state providing a seamless user experience. | TC18 |
-| NFR13 | The application shall run alongside other applications without any interruption in performance. |  |
+| NFR13 | The application shall run alongside other applications without any interruption in performance. | TBD |
 | NFR14 | The application shall run without major bugs or crashing issues | TC18, TC19, TC20, TC21, TC22 |
 | NFR15 | The application shall save to persistent memory without affecting the performance of the application or the user experience thereof. | TC19, TC20, TC21, TC22 |
 
