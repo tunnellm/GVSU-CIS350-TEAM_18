@@ -12,10 +12,10 @@
 
 | ID | Requirement | Test Cases |
 | :-------------: | :----------: | :----------: |
-| FR1 | The application shall allow for the user to create course categories with credit hours that contain assignment objects as described below. | TC1, TC2, TC3, TC4, TC5, TC6, TC7, TC10, TC11, TC13 |
-| FR2 | The application shall allow for the user to create assignments with Point Value and Weighting for each course category. | TC2, TC3, TC4, TC5, TC6, TC7, TC11 |
-| FR3 | The application shall allow for the user to create events with Event Name, Description, and Date of Event. | TC9, TC12 |
-| FR4 | The application shall save new courses when added by the user and validated. | TC13 |
+| FR1 | The application shall allow for the user to create course categories with credit hours that contain assignment objects as described below. |  |
+| FR2 | The application shall allow for the user to create assignments with Point Value and Weighting for each course category. |  |
+| FR3 | The application shall allow for the user to create events with Event Name, Description, and Date of Event. |  |
+| FR4 | The application shall save new courses when added by the user and validated. | |
 | FR5 | The application shall save new events when added by the user. |  |
 | FR6 | The application shall save new assignments when added by the user and validated. |  |
 
@@ -23,7 +23,7 @@
 ### User Input: Created Categories
 | ID | Requirement | Test Cases |
 | :-------------: | :----------: | :----------: |
-| FR7 | The application shall have the capability to notify the user when an assignment is within 48 hours of completion. | TC6 |
+| FR7 | The application shall have the capability to notify the user when an assignment is within 48 hours of completion. | |
 | FR8 | The application shall load all assignments from persistent memory on application startup. |  |
 | FR9 | The application shall correctly distribute each loaded assignment to the proper course. |  |
 | FR10 | The application shall load all events from persistent memory on application startup. |  |
@@ -158,19 +158,29 @@
 
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
-| TC19 | Automatic Saving of Courses | Open The Application, Navigate to MANAGE COLCALENDAR, Enter Information For All Fields, Press +1, Close Application Fully, Open The Application, Navigate to MANAGE COLCALENDAR | Beep Boop, 5 | Beep Boop is located in Courses Spinner | Beep Boop is located in Courses Spinner | PASS |  |
+| TC19 | Automatic Saving of Courses | Open The Application, Navigate to MANAGE COLCALENDAR, Enter Information For All Fields, Press +1, Close Application Fully, Open The Application, Navigate to MANAGE COLCALENDAR | Beep Boop, 5 | Beep Boop is located in Courses Spinner | Beep Boop is located in Courses Spinner | PASS | FR4, FR9, FR17, NFR1, NFR2, NFR3, NFR4, NFR5, NFR9, NFR10, NFR14, NFR15  |
 
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
-| TC20 | Automatic Saving of Assignment | Open The Application, Ensure that at least one dummy Course (Made for testing purposes) has been made, Navigate to MANAGE COLCALENDAR, Navigate to ASSIGNMENTS, Enter Information For All Fields, Press +1, Close the Application Fully, Open The Application, Navigate to MANAGE COLCALENDAR, Press The Dummy Course Name | Dummy Course Name, Ass 3, 100, .2, Date 1 Greater than Today's date | Message Containing: Assignment Name:Ass 3\nAssignment Weighting: 0.1, Points: 100, Assignment Due Date: {One Greater than Today’s Date}” | Message Containing: Assignment Name:Ass 3\nAssignment Weighting: 0.1, Points: 100, Assignment Due Date: DECEMBER/8/2020” | PASS |  |
+| TC20 | Automatic Saving of Assignment | Open The Application, Ensure that at least one dummy Course (Made for testing purposes) has been made, Navigate to MANAGE COLCALENDAR, Navigate to ASSIGNMENTS, Enter Information For All Fields, Press +1, Close the Application Fully, Open The Application, Navigate to MANAGE COLCALENDAR, Press The Dummy Course Name | Dummy Course Name, Ass 3, 100, .2, Date 1 Greater than Today's date | Message Containing: Assignment Name:Ass 3\nAssignment Weighting: 0.1, Points: 100, Assignment Due Date: {One Greater than Today’s Date}” | Message Containing: Assignment Name:Ass 3\nAssignment Weighting: 0.1, Points: 100, Assignment Due Date: DECEMBER/8/2020” | PASS | FR6, FR8, FR16, NFR1, NFR2, NFR3, NFR4, NFR5, NFR9, NFR10, NFR14, NFR15 |
 
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
-| TC21 | Automatic Saving of Event | Open The Application, Navigate to MANAGE COLCALENDAR, Navigate to EVENTS, Enter Information For All Fields, Press +1, Close The Application Fully, Open The Application, Press The Date of The Event Created | Event Name, Event Description | Message Containing: "Event: Event Name\nEvent Description: Event Description"  | Message Stating: "Event: Event Name\nEvent Description: Event Description" | PASS | |
+| TC21 | Automatic Saving of Event | Open The Application, Navigate to MANAGE COLCALENDAR, Navigate to EVENTS, Enter Information For All Fields, Press +1, Close The Application Fully, Open The Application, Press The Date of The Event Created | Event Name, Event Description | Message Containing: "Event: Event Name\nEvent Description: Event Description"  | Message Stating: "Event: Event Name\nEvent Description: Event Description" | PASS | FR3, FR5, FR10, FR11, FR13, FR14, FR15, NFR1, NFR2, NFR3, NFR4, NFR5, NFR9, NFR10, NFR14, NFR15 |
 
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
-| TC12 | Application Startup | Open The Application, Ensure that an Assignment has been created with a date within 48 of today, Press Turn On Notifications, Wait for Notification | Assignment (Created in Earlier Test or as described in TC13/TC14 if fresh install) | Notification With Text Stating: “ColCal\nYou have an assignment due soon”  | Notification With Text Stating: “ColCal\nYou have an assignment due soon” | PASS | |
+| TC12 | Application Notification | Open The Application, Ensure that an Assignment has been created with a date within 48 of today, Press Turn On Notifications, Wait for Notification | Assignment (Created in Earlier Test or as described in TC13/TC14 if fresh install) | Notification With Text Stating: “ColCal\nYou have an assignment due soon”  | Notification With Text Stating: “ColCal\nYou have an assignment due soon” | PASS | FR10, FR11, FR13, FR14, NFR9, NFR10, NFR11, NFR14, NFR15 |
 
 # Software Artifacts
 
+> The following section contains all of the links for all of the software development artifacts that we have created throughout the semester. This shows the progress we have made as a team over the course of the semester.
+
+* [Extended UserAssingments Description.MD](https://github.com/tunnellm/GVSU-CIS350-TEAM_18/blob/master/artifacts/use_case_diagrams/Extend%20UserAssignments%20Description.MD)
+* []()
+* []()
+* []()
+* []()
+* []()
+* []()
+* []()
