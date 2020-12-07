@@ -11,8 +11,8 @@ Project description (~1 paragraph)
 
 ## Prerequisites
 
-Installation of Android Studio, Version 4.1
-Installation of AVD Emulator, Pixel 2 - API 30
+1. Installation of Android Studio, Version 4.1
+1. Installation of AVD Emulator, Pixel 2 - API 30
 
 ## Run Instructions
 1. [Download Android Studio](https://developer.android.com/studio)
@@ -21,9 +21,9 @@ Installation of AVD Emulator, Pixel 2 - API 30
 1. Download Pixel 2 With API 30
 1. Press New > Import Project > src
 1. Create New Run Configuration
-1.1 Set Module To ColCalendarApp
-1.1 Default APK
-1.1 Before launch, Grade-aware Make
-1.1 Save Configuration
+1.1. Set Module To ColCalendarApp
+1.1. Default APK
+1.1. Before launch, Grade-aware Make
+1.1. Save Configuration
 1.Launch Android Emulator
 1.Press Play to Install APK
