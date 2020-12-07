@@ -12,10 +12,10 @@
 
 | ID | Requirement | Test Cases |
 | :-------------: | :----------: | :----------: |
-| FR1 | The application shall allow for the user to create course categories with credit hours that contain assignment objects as described below. | TC1, TC2, TC3, TC4, TC5, TC6, TC7, TC10, TC11 |
+| FR1 | The application shall allow for the user to create course categories with credit hours that contain assignment objects as described below. | TC1, TC2, TC3, TC4, TC5, TC6, TC7, TC10, TC11, TC13 |
 | FR2 | The application shall allow for the user to create assignments with Point Value and Weighting for each course category. | TC2, TC3, TC4, TC5, TC6, TC7, TC11 |
 | FR3 | The application shall allow for the user to create events with Event Name, Description, and Date of Event. | TC9, TC12 |
-| FR4 | The application shall save new courses when added by the user and validated. |  |
+| FR4 | The application shall save new courses when added by the user and validated. | TC13 |
 | FR5 | The application shall save new events when added by the user. |  |
 | FR6 | The application shall save new assignments when added by the user and validated. |  |
 
@@ -37,7 +37,7 @@
 | FR14 | The application shall display events happening on the selected day on the front page calendar. | TC9 |
 | FR15 | The application shall display assignments happening on the selected day on the front page calendar. | TC2, TC3, TC4, TC5, TC6, TC7 |
 | FR16 | The application shall display Assignment information for each Course when selected by the user. | TC2, TC3, TC4, TC5, TC6, TC7 |
-| FR17 | The application shall display all of the user-created course categories. | TC1, TC2, TC3, TC4, TC5, TC6, TC7 |
+| FR17 | The application shall display all of the user-created course categories. | TC1, TC2, TC3, TC4, TC5, TC6, TC7, TC13 |
 
 
 
@@ -127,3 +127,9 @@
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
 | TC12 | Events No Input Validation | Open The Application, Navigate to MANAGE COLCALENDAR, Navigate to EVENTS Press +1 |  | Error Message Stating: "You forgot to fill out one of the forms | Error Message Stating: "You forgot to fill out one of the forms | PASS | FR3 |
+
+## Integration tests
+
+| ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
+| :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
+| TC13 | User-Creation of Courses | Open The Application, Navigate to MANAGE COLCALENDAR, Enter Information For All Fields, Press +1 | Beep Boop, 5 | Message Stating: "Successfully Added Beep Boop" | Message Stating: "Successfully Added Beep Boop" | PASS | FR1, FR4, FR17 |
