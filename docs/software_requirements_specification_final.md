@@ -83,11 +83,7 @@
 
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
-| TC1 | Course Name Validation | 
-1. Open The Application
-1. Navigate to MANAGE ColCalendar
-1. Input in Course Name field
-1. Press +1  | QWERTY | Error Message Stating: "You forgot to fill out one of the forms" | Error Message Stating: "You forgot to fill out one of the forms" | PASS | FR1 |
+| TC1 | Course Name Validation | 1. Open The Application 1. Navigate to MANAGE ColCalendar Input in Course Name field Press +1  | QWERTY | Error Message Stating: "You forgot to fill out one of the forms" | Error Message Stating: "You forgot to fill out one of the forms" | PASS | FR1 |
 
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
