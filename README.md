@@ -1,6 +1,6 @@
 # TEAM 18
 
-Project description (~1 paragraph)
+ColCalendar18 is a calendar application that allows for students to keep track of and prepare for assignments added to the program in a timely fashion. There is an algorithm that determines the optimal order of completion for assignments on a grade-weight-date scale per class. Students are able to add courses, events, and assignments to the calendar and receive notifications for close to due date assignments. The program automatically determines the optimal order of completion for assignments when displayed to the user. Events and assignments are displayed to the user when selecting a date on the home page of the calendar.
 
 ## Team Members and Roles
 
