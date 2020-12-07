@@ -12,9 +12,9 @@
 
 | ID | Requirement | Test Cases |
 | :-------------: | :----------: | :----------: |
-| FR1 | The application shall allow for the user to create course categories with credit hours that contain assignment objects as described below. | TC1, TC2, TC3, TC4, TC5, TC6, TC7 |
-| FR2 | The application shall allow for the user to create assignments with Point Value and Weighting for each course category. | TC2, TC3, TC4, TC5, TC6, TC7 |
-| FR3 | The application shall allow for the user to create events with Event Name, Description, and Date of Event. |  |
+| FR1 | The application shall allow for the user to create course categories with credit hours that contain assignment objects as described below. | TC1, TC2, TC3, TC4, TC5, TC6, TC7, TC10, TC11 |
+| FR2 | The application shall allow for the user to create assignments with Point Value and Weighting for each course category. | TC2, TC3, TC4, TC5, TC6, TC7, TC11 |
+| FR3 | The application shall allow for the user to create events with Event Name, Description, and Date of Event. | TC9, TC12 |
 | FR4 | The application shall save new courses when added by the user and validated. |  |
 | FR5 | The application shall save new events when added by the user. |  |
 | FR6 | The application shall save new assignments when added by the user and validated. |  |
@@ -34,10 +34,10 @@
 | ID | Requirement | Test Cases |
 | :-------------: | :----------: | :----------: |
 | FR13 | The application shall display a calendar on the home screen of the application. |  |
-| FR14 | The application shall display events happening on the selected day on the front page calendar. |  |
-| FR15 | The application shall display assignments happening on the selected day on the front page calendar. |  |
-| FR16 | The application shall display Assignment information for each Course when selected by the user. |  |
-| FR17 | The application shall display all of the user-created course categories.
+| FR14 | The application shall display events happening on the selected day on the front page calendar. | TC9 |
+| FR15 | The application shall display assignments happening on the selected day on the front page calendar. | TC2, TC3, TC4, TC5, TC6, TC7 |
+| FR16 | The application shall display Assignment information for each Course when selected by the user. | TC2, TC3, TC4, TC5, TC6, TC7 |
+| FR17 | The application shall display all of the user-created course categories. | TC1, TC2, TC3, TC4, TC5, TC6, TC7 |
 
 
 
@@ -56,9 +56,9 @@
 ### Display Requirements
 | ID | Requirement | Test Cases |
 | :-------------: | :----------: | :----------: |
-| NFR6 | The application shall calculate the optimal order of completion for each assignment per course. |  |
-| NFR7 | The application shall display the assignments in order of optimal completion on the selected course page. |  |
-| NFR8 | The application shall display assignments in a manner that is easy to be understood by the user at a glance. |  |
+| NFR6 | The application shall calculate the optimal order of completion for each assignment per course. | TC2, TC3, TC4, TC5, TC6, TC7 |
+| NFR7 | The application shall display the assignments in order of optimal completion on the selected course page. | TC2, TC3, TC4, TC5, TC6, TC7 |
+| NFR8 | The application shall display assignments in a manner that is easy to be understood by the user at a glance. | TC2, TC3, TC4, TC5, TC6, TC7 |
 | NFR9 | The application shall have a graphical user interface that is easily navigated by the user. |  |
 | NFR10 | The application shall have a graphical user interface that is navigatable without application crashing. |  |
 
@@ -90,32 +90,40 @@
 
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
-| TC3 | Assignment Name Validation | Open The Application, Ensure that a dummy Course has been created for testing, Navigate to MANAGE COLCALENDAR, Navigate to Assignments, Select the dummy Course, enter information for all fields except for name, Press +1  | 100, .1 | Error Message Stating: "You forgot to fill out one of the forms" | Error Message Stating: "You forgot to fill out one of the forms" | PASS | FR1, FR2 |
+| TC3 | Assignment Name Validation | Open The Application, Ensure that a dummy Course has been created for testing, Navigate to MANAGE COLCALENDAR, Navigate to ASSIGNMENTS, Select the dummy Course, enter information for all fields except for name, Press +1  | 100, .1 | Error Message Stating: "You forgot to fill out one of the forms" | Error Message Stating: "You forgot to fill out one of the forms" | PASS | FR1, FR2 |
 
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
-| TC4 | Assignment Course Created Validation | On a fresh install, Open The Application, Navigate to MANAGE COLCALENDAR, Navigate to Assignments, Enter information for all fields and select a date, Press +1 | Ass Name, 100, .1, Date 1 Greater Than Today | Error message stating: "Add a course first!" | Error message stating: "Add a course first!" | PASS | FR1, FR2 |
+| TC4 | Assignment Course Created Validation | On a fresh install, Open The Application, Navigate to MANAGE COLCALENDAR, Navigate to ASSIGNMENTS, Enter information for all fields and select a date, Press +1 | Ass Name, 100, .1, Date 1 Greater Than Today | Error message stating: "Add a course first!" | Error message stating: "Add a course first!" | PASS | FR1, FR2 |
 
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
-| TC5 | Assignment Weighting Greater Than 1 Required | Open The Application, Ensure that a dummy Course has been created for testing, Navigate to MANAGE COLCALENDAR, Navigate to Assignments, Select the dummy Course, enter information in all fields, Press +1 | Ass Name 2, 100, 10, Date 1 Greater Than Today | Error Message Stating: "Weighting Must Be Less Than 1" | Error Message Stating: "Weighting Must Be Less Than 1" | PASS | FR1,FR2 |
+| TC5 | Assignment Weighting Greater Than 1 Required | Open The Application, Ensure that a dummy Course has been created for testing, Navigate to MANAGE COLCALENDAR, Navigate to ASSIGNMENTS, Select the dummy Course, enter information in all fields, Press +1 | Ass Name 2, 100, 10, Date 1 Greater Than Today | Error Message Stating: "Weighting Must Be Less Than 1" | Error Message Stating: "Weighting Must Be Less Than 1" | PASS | FR1,FR2 |
 
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
-| TC6 | Assignment Date Validation | Open The Application, Ensure that a dummy Course has been created for testing, Navigate to MANAGE COLCALENDAR, Navigate to Assignments, Select the dummy Course, enter information in all fields, Press +1 | Ass Name 3, 100, 10, Same Date as Current Date | Error Message Stating: "Selected Date Must Be Different From Today's Date" | Error Message Stating: "Selected Date Must Be Different From Today's Date" | PASS | FR1, FR2 |
+| TC6 | Assignment Date Validation | Open The Application, Ensure that a dummy Course has been created for testing, Navigate to MANAGE COLCALENDAR, Navigate to ASSIGNMENTS, Select the dummy Course, enter information in all fields, Press +1 | Ass Name 3, 100, 10, Same Date as Current Date | Error Message Stating: "Selected Date Must Be Different From Today's Date" | Error Message Stating: "Selected Date Must Be Different From Today's Date" | PASS | FR1, FR2 |
 
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
-| TC7 | Assignment Points Validation | Open The Application, Ensure that a dummy Course has been created for testing, Navigate to MANAGE COLCALENDAR, Navigate to Assignments, Select the dummy Course, enter information for all fields except for name, Press +1  | QWERTY, .1 | Error Message Stating: "You forgot to fill out one of the forms" | Error Message Stating: "You forgot to fill out one of the forms" | PASS | FR1, FR2 |
+| TC7 | Assignment Points Validation | Open The Application, Ensure that a dummy Course has been created for testing, Navigate to MANAGE COLCALENDAR, Navigate to ASSIGNMENTS, Select the dummy Course, enter information for all fields except for name, Press +1  | QWERTY, .1 | Error Message Stating: "You forgot to fill out one of the forms" | Error Message Stating: "You forgot to fill out one of the forms" | PASS | FR1, FR2 |
 
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
-| TC8 | Event Name Validation | <steps to execute TC1> | <input values to this test case> | <expected output as a result of test case> | <actual output of test case> | <did it pass or fail?> | <requirement IDs this test case is linked to> |
+| TC8 | Event Name Validation | Open The Application, Navigate to MANAGE COLCALENDAR, Navigates to EVENTS, Input Information in the Description Field | This Is An Event Description | Error Message Stating: "You forgot to fill out one of the forms" | Error Message Stating: "You forgot to fill out one of the forms" | PASS | FR3 |
 
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
-| TC9 | <TC1 description> | <steps to execute TC1> | <input values to this test case> | <expected output as a result of test case> | <actual output of test case> | <did it pass or fail?> | <requirement IDs this test case is linked to> |
+| TC9 | Event Description Validation | Open The Application, Navigate to MANAGE COLCALENDAR, Navigates to EVENTS, Input Information in the Name Field | This Is An Event Name | Error Message Stating: "You forgot to fill out one of the forms | Error Message Stating: "You forgot to fill out one of the forms | PASS | FR3 |
 
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
-| TC10 | <TC1 description> | <steps to execute TC1> | <input values to this test case> | <expected output as a result of test case> | <actual output of test case> | <did it pass or fail?> | <requirement IDs this test case is linked to> |
+| TC10 | Courses No Input Validation | Open The Application, Navigate to MANAGE COLCALENDAR, Press +1 |  | Error Message Stating: "You forgot to fill out one of the forms | Error Message Stating: "You forgot to fill out one of the forms | PASS | FR1 |
+
+| ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
+| :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
+| TC11 | Assignments No Input Validation | On A Fresh Install, Open The Application, Navigate to MANAGE COLCALENDAR, Navigate to ASSIGNMENTS, Press +1 |  | Error Message Stating: "You forgot to fill out one of the forms | Error Message Stating: "You forgot to fill out one of the forms | PASS | FR1, FR2 |
+
+| ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
+| :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
+| TC12 | Events No Input Validation | Open The Application, Navigate to MANAGE COLCALENDAR, Navigate to EVENTS Press +1 |  | Error Message Stating: "You forgot to fill out one of the forms | Error Message Stating: "You forgot to fill out one of the forms | PASS | FR3 |
