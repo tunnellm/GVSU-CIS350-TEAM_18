@@ -156,5 +156,21 @@
 | :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
 | TC18 | Application Startup | Open The Application | Press Application ColCalendar18 from App Menu | The Application Opens Without Crashing | The Application Opened Without Crashing | PASS | NFR12, NFR14 |
 
+| ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
+| :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
+| TC19 | Automatic Saving of Courses | Open The Application, Navigate to MANAGE COLCALENDAR, Enter Information For All Fields, Press +1, Close Application Fully, Open The Application, Navigate to MANAGE COLCALENDAR | Beep Boop, 5 | Beep Boop is located in Courses Spinner | Beep Boop is located in Courses Spinner | PASS |  |
+
+| ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
+| :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
+| TC20 | Automatic Saving of Assignment | Open The Application, Ensure that at least one dummy Course (Made for testing purposes) has been made, Navigate to MANAGE COLCALENDAR, Navigate to ASSIGNMENTS, Enter Information For All Fields, Press +1, Close the Application Fully, Open The Application, Navigate to MANAGE COLCALENDAR, Press The Dummy Course Name | Dummy Course Name, Ass 3, 100, .2, Date 1 Greater than Today's date | Message Containing: Assignment Name:Ass 3\nAssignment Weighting: 0.1, Points: 100, Assignment Due Date: {One Greater than Today’s Date}” | Message Containing: Assignment Name:Ass 3\nAssignment Weighting: 0.1, Points: 100, Assignment Due Date: DECEMBER/8/2020” | PASS |  |
+
+| ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
+| :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
+| TC21 | Automatic Saving of Event | Open The Application, Navigate to MANAGE COLCALENDAR, Navigate to EVENTS, Enter Information For All Fields, Press +1, Close The Application Fully, Open The Application, Press The Date of The Event Created | Event Name, Event Description | Message Containing: "Event: Event Name\nEvent Description: Event Description"  | Message Stating: "Event: Event Name\nEvent Description: Event Description" | PASS | |
+
+| ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
+| :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
+| TC12 | Application Startup | Open The Application, Ensure that an Assignment has been created with a date within 48 of today, Press Turn On Notifications, Wait for Notification | Assignment (Created in Earlier Test or as described in TC13/TC14 if fresh install) | Notification With Text Stating: “ColCal\nYou have an assignment due soon”  | Notification With Text Stating: “ColCal\nYou have an assignment due soon” | PASS | |
+
 # Software Artifacts
 
