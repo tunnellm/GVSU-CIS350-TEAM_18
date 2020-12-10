@@ -12,32 +12,32 @@
 
 | ID | Requirement | Test Cases |
 | :-------------: | :----------: | :----------: |
-| FR1 | The application shall allow for the user to create course categories with credit hours that contain assignment objects as described below. |  |
-| FR2 | The application shall allow for the user to create assignments with Point Value and Weighting for each course category. |  |
-| FR3 | The application shall allow for the user to create events with Event Name, Description, and Date of Event. |  |
-| FR4 | The application shall save new courses when added by the user and validated. | |
-| FR5 | The application shall save new events when added by the user. |  |
-| FR6 | The application shall save new assignments when added by the user and validated. |  |
+| FR1 | The application shall allow for the user to create course categories with credit hours that contain assignment objects as described below. | TC1, TC2, TC3, TC4, TC5, TC6, TC7, TC10, TC11, TC13, TC14, TC16|
+| FR2 | The application shall allow for the user to create assignments with Point Value and Weighting for each course category. | TC3, TC4, TC5, TC6, TC7, TC11, TC14, TC16|
+| FR3 | The application shall allow for the user to create events with Event Name, Description, and Date of Event. | TC8, TC12, TC15, TC21 |
+| FR4 | The application shall save new courses when added by the user and validated. | TC13, TC19|
+| FR5 | The application shall save new events when added by the user. | TC15, TC21 |
+| FR6 | The application shall save new assignments when added by the user and validated. | TC14, TC20  |
 
 
 ### User Input: Created Categories
 | ID | Requirement | Test Cases |
 | :-------------: | :----------: | :----------: |
-| FR7 | The application shall have the capability to notify the user when an assignment is within 48 hours of completion. | |
-| FR8 | The application shall load all assignments from persistent memory on application startup. |  |
-| FR9 | The application shall correctly distribute each loaded assignment to the proper course. |  |
-| FR10 | The application shall load all events from persistent memory on application startup. |  |
-| FR11 | The application shall take into account leap year to correctly display dates. |  |
+| FR7 | The application shall have the capability to notify the user when an assignment is within 48 hours of completion. | TC22 |
+| FR8 | The application shall load all assignments from persistent memory on application startup. | TC20 |
+| FR9 | The application shall correctly distribute each loaded assignment to the proper course. | TC16, TC19 |
+| FR10 | The application shall load all events from persistent memory on application startup. | TC17, TC21, TC22 |
+| FR11 | The application shall take into account leap year to correctly display dates. | TC15, TC17, TC21, TC22 |
 
 
 ### ColCalendar18 Display
 | ID | Requirement | Test Cases |
 | :-------------: | :----------: | :----------: |
-| FR13 | The application shall display a calendar on the home screen of the application. |  |
-| FR14 | The application shall display events happening on the selected day on the front page calendar. | TC9 |
-| FR15 | The application shall display assignments happening on the selected day on the front page calendar. | TC2, TC3, TC4, TC5, TC6, TC7 |
-| FR16 | The application shall display Assignment information for each Course when selected by the user. | TC2, TC3, TC4, TC5, TC6, TC7 |
-| FR17 | The application shall display all of the user-created course categories. | TC1, TC2, TC3, TC4, TC5, TC6, TC7, TC13 |
+| FR13 | The application shall display a calendar on the home screen of the application. | TC17, TC21, TC22 |
+| FR14 | The application shall display events happening on the selected day on the front page calendar. | TC17, TC21, TC22 |
+| FR15 | The application shall display assignments happening on the selected day on the front page calendar. | TC17, TC21 |
+| FR16 | The application shall display Assignment information for each Course when selected by the user. | TC16, TC20 |
+| FR17 | The application shall display all of the user-created course categories. | TC13, TC19  |
 
 
 
@@ -46,31 +46,31 @@
 ### Persistent Memory
 | ID | Requirement | Test Cases |
 | :-------------: | :----------: | :----------: |
-| NFR1 | The application shall load from persistent memory without impacting startup performance. |  |
-| NFR2 | The application shall load from persistent memory without data loss between multiple application instances. |  |
-| NFR3 | The application shall load from persistent memory without requiring extra permissions by the user. |  |
-| NFR4 | The application shall not require extra permissions to save to persistent memory. |  |
-| NFR5 | The application shall never require input from the user to save or load data. |  |
+| NFR1 | The application shall load from persistent memory without impacting startup performance. | TC19, TC20, TC21 |
+| NFR2 | The application shall load from persistent memory without data loss between multiple application instances. | TC19, TC20, TC21 |
+| NFR3 | The application shall load from persistent memory without requiring extra permissions by the user. | TC19, TC20, TC21 |
+| NFR4 | The application shall not require extra permissions to save to persistent memory. | TC13, TC14, TC19, TC20, TC21 |
+| NFR5 | The application shall never require input from the user to save or load data. | TC13, TC14, TC15, TC17, TC19, TC20,TC21  |
 
 
 ### Display Requirements
 | ID | Requirement | Test Cases |
 | :-------------: | :----------: | :----------: |
-| NFR6 | The application shall calculate the optimal order of completion for each assignment per course. | TC2, TC3, TC4, TC5, TC6, TC7 |
-| NFR7 | The application shall display the assignments in order of optimal completion on the selected course page. | TC2, TC3, TC4, TC5, TC6, TC7 |
-| NFR8 | The application shall display assignments in a manner that is easy to be understood by the user at a glance. | TC2, TC3, TC4, TC5, TC6, TC7 |
-| NFR9 | The application shall have a graphical user interface that is easily navigated by the user. |  |
-| NFR10 | The application shall have a graphical user interface that is navigatable without application crashing. |  |
+| NFR6 | The application shall calculate the optimal order of completion for each assignment per course. | TC16 |
+| NFR7 | The application shall display the assignments in order of optimal completion on the selected course page. | TC16 |
+| NFR8 | The application shall display assignments in a manner that is easy to be understood by the user at a glance. | TBD |
+| NFR9 | The application shall have a graphical user interface that is easily navigated by the user. | TC16, TC17, TC19, TC20, TC21, TC22 |
+| NFR10 | The application shall have a graphical user interface that is navigatable without application crashing. | TC16, TC17, TC19, TC20, TC21, TC22 |
 
 
 ### Application Stability
 | ID | Requirement | Test Cases |
 | :-------------: | :----------: | :----------: |
-| NFR11 | The application shall be lightweight, with minimal usage of device computing resources. |  |
-| NFR12 | The application shall reload from a dormant state providing a seamless user experience. |  |
-| NFR13 | The application shall run alongside other applications without any interruption in performance. |  |
-| NFR14 | The application shall run without major bugs or crashing issues |  |
-| NFR15 | The application shall save to persistent memory without affecting the performance of the application or the user experience thereof. |  |
+| NFR11 | The application shall be lightweight, with minimal usage of device computing resources. | TC22 |
+| NFR12 | The application shall reload from a dormant state providing a seamless user experience. | TC18 |
+| NFR13 | The application shall run alongside other applications without any interruption in performance. | TBD |
+| NFR14 | The application shall run without major bugs or crashing issues | TC18, TC19, TC20, TC21, TC22 |
+| NFR15 | The application shall save to persistent memory without affecting the performance of the application or the user experience thereof. | TC19, TC20, TC21, TC22 |
 
 
 # Test Specification
@@ -170,13 +170,14 @@
 
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
-| TC12 | Application Notification | Open The Application, Ensure that an Assignment has been created with a date within 48 of today, Press Turn On Notifications, Wait for Notification | Assignment (Created in Earlier Test or as described in TC13/TC14 if fresh install) | Notification With Text Stating: “ColCal\nYou have an assignment due soon”  | Notification With Text Stating: “ColCal\nYou have an assignment due soon” | PASS | FR10, FR11, FR13, FR14, NFR9, NFR10, NFR11, NFR14, NFR15 |
+| TC22 | Application Notification | Open The Application, Ensure that an Assignment has been created with a date within 48 of today, Press Turn On Notifications, Wait for Notification | Assignment (Created in Earlier Test or as described in TC13/TC14 if fresh install) | Notification With Text Stating: “ColCal\nYou have an assignment due soon”  | Notification With Text Stating: “ColCal\nYou have an assignment due soon” | PASS | FR7, FR10, FR11, FR13, FR14, NFR9, NFR10, NFR11, NFR14, NFR15 |
 
 # Software Artifacts
 
 > The following section contains all of the links for all of the software development artifacts that we have created throughout the semester. This shows the progress we have made as a team over the course of the semester.
 
 * [software_requirements_specification_final.md](https://github.com/tunnellm/GVSU-CIS350-TEAM_18/blob/master/docs/software_requirements_specification_final.md)
+* [Final Presentation Slides](https://docs.google.com/presentation/d/1sxBpY_syZZSSBtz-ebgBl1EOihAACd6zRELjk73dXIo/edit?usp=sharing)
 * [software_requirements_specification.md (Midterm)](https://github.com/tunnellm/GVSU-CIS350-TEAM_18/blob/master/docs/software_requirements_specification.md)
 * [Burn Down Chart 12-7-20.pdf](https://github.com/tunnellm/GVSU-CIS350-TEAM_18/blob/master/docs/Burn%20Down%20Chart%2012-7-20.pdf)
 * [Extended UserAssingments Description.MD](https://github.com/tunnellm/GVSU-CIS350-TEAM_18/blob/master/artifacts/use_case_diagrams/Extend%20UserAssignments%20Description.MD)
@@ -189,6 +190,3 @@
 * [README.md](https://github.com/tunnellm/GVSU-CIS350-TEAM_18/blob/master/README.md)
 * [proposal 10-04.md](https://github.com/tunnellm/GVSU-CIS350-TEAM_18/blob/master/docs/proposal%2010-04.md)
 * [proposal 9-27.md](https://github.com/tunnellm/GVSU-CIS350-TEAM_18/blob/master/docs/proposal%209-27.md)
-* []()
-* []()
-* []()
