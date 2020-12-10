@@ -13,6 +13,7 @@ import java.util.Calendar;
  *
  * @Author Marc
  * @Author Tom
+ * @Author Jack
  */
 
 public class Assignment {
